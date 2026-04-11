@@ -16,13 +16,13 @@ export default function DoubleSection() {
       >
         <div className="max-w-7xl mx-auto px-8">
           {/* Label */}
-          <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-medium mb-10">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-medium mb-4 md:mb-10">
             Mi espacio
           </p>
 
-          <div className="flex gap-12">
+          <div className="flex flex-col md:flex-row gap-12">
             {/* Left: big heading */}
-            <div className="w-[28%] shrink-0">
+            <div className="md:w-[28%] shrink-0">
               <h2
                 className="text-4xl xl:text-5xl leading-[1.15] text-[#3D1808] font-normal"
                 style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
@@ -32,15 +32,15 @@ export default function DoubleSection() {
             </div>
 
             {/* Right: three paragraphs + button */}
-            <div className="flex-1 flex gap-8">
+            <div className="md:flex-1 flex flex-col md:flex-row font-extralight text-lg md:text-[13px] text-gray-600 gap-8">
               <div className="flex-1 flex flex-col gap-5">
-                <p className="text-[13px] text-stone-700 leading-relaxed">
+                <p>
                   He creado un espacio cálido y acogedor donde cada mujer puede
                   sentirse segura, escuchada y comprendida. No es una clínica
                   fría, es un lugar donde puedes hablar sin miedo y encontrar
                   soluciones reales.
                 </p>
-                <p className="text-[13px] text-stone-700 leading-relaxed">
+                <p>
                   Muchas mujeres han llegado sintiéndose solas, buscando
                   respuestas sin encontrarlas. Aquí te escucho y te apoyo. Con
                   fisioterapia especializada en suelo pélvico y entrenamiento
@@ -50,15 +50,15 @@ export default function DoubleSection() {
                 </p>
               </div>
               <div className="flex-1 flex flex-col gap-5 justify-between">
-                <p className="text-[13px] text-stone-700 leading-relaxed">
+                <p>
                   Mi enfoque combina tratamiento manual, ejercicio y respeto por
                   tu historia, emociones y cuerpo. Bienvenida contigo, confía en
                   tu recuperación y encuentra aquí el acompañamiento que
                   necesitas.
                 </p>
                 <Link
-                  href="#sobre-mi"
-                  className="self-start bg-[#3D1808] text-white text-[10px] tracking-[0.18em] font-medium px-6 py-3 rounded-full hover:bg-[#2c1005] transition-colors"
+                  href="/sobre-mi"
+                  className="w-full mt-4 text-center md:w-fit self-start bg-[var(--color-foreground)] text-[var(--color-accent)] text-md tracking-[0.18em] font-medium px-6 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
                 >
                   CONOCE MÁS SOBRE MÍ
                 </Link>
@@ -81,7 +81,7 @@ export default function DoubleSection() {
         <div className="relative max-w-7xl mx-auto h-full px-8">
           {/* burble-1 — small, upper-left, fully in white zone */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{ top: 80, left: 28, width: 148, height: 148 }}
           >
             <Image
@@ -91,11 +91,32 @@ export default function DoubleSection() {
               className="object-contain"
             />
           </div>
-
+          <div
+            className="absolute sm:hidden"
+            style={{ top: 148, left: -35, width: 148, height: 148 }}
+          >
+            <Image
+              src="/burble-vector-1.png"
+              alt="Espacio Roser Sabater"
+              fill
+              className="object-contain"
+            />
+          </div>
           {/* burble-2 — large, straddles boundary */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{ top: 148, left: 118, width: 300, height: 260 }}
+          >
+            <Image
+              src="/burble-vector-2.png"
+              alt="Consulta fisioterapia"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className="absolute sm:hidden"
+            style={{ top: 208, left: 68, width: 220, height: 200 }}
           >
             <Image
               src="/burble-vector-2.png"
@@ -107,8 +128,20 @@ export default function DoubleSection() {
 
           {/* burble-3 — medium, center-left, slightly into lavender */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{ top: 260, left: 388, width: 200, height: 193 }}
+          >
+            <Image
+              src="/burble-vector-3.png"
+              alt="Sala de tratamiento"
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          <div
+            className="absolute sm:hidden"
+            style={{ top: 300, left: 260, width: 140, height: 135 }}
           >
             <Image
               src="/burble-vector-3.png"
@@ -120,8 +153,19 @@ export default function DoubleSection() {
 
           {/* burble-4 — large oval, center, spans boundary */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{ top: 47, left: 558, width: 278, height: 333 }}
+          >
+            <Image
+              src="/burble-vector-4.png"
+              alt="Equipamiento clínica"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div
+            className="absolute sm:hidden"
+            style={{ top: 47, left: 280, width: 220, height: 280 }}
           >
             <Image
               src="/burble-vector-4.png"
@@ -133,7 +177,7 @@ export default function DoubleSection() {
 
           {/* burble-5 — large, right side, spans boundary */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{ top: 150, left: 860, width: 263, height: 296 }}
           >
             <Image

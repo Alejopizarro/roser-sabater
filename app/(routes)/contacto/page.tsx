@@ -9,7 +9,7 @@ export default function ContactoPage() {
     >
       {/* ── Sección 1: Hero texto ── */}
       <section className="w-full py-16 px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-[160px_1fr] gap-16 items-start">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 items-start">
           <p className="text-[9px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
             Contacto
           </p>
@@ -40,7 +40,7 @@ export default function ContactoPage() {
 
       {/* ── Sección 2: Datos de contacto ── */}
       <section className="w-full pb-16 px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-[160px_1fr] gap-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16">
           <div />
 
           <div className="grid grid-cols-3 gap-8 border-t border-stone-200 pt-10">

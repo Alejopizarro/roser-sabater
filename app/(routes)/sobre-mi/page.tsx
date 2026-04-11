@@ -1,10 +1,15 @@
 import ContactSection from "@/components/contact-section";
+import {
+  HeroFloatingImages,
+  SilencioImages,
+} from "@/components/about-animated-images";
+import { Activity, GraduationCap, Medal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function SobreMiPage() {
   return (
-    <main>
+    <main className="overflow-hidden">
       {/* ── Sección 1: Hero ── */}
       <section className="relative w-full h-[80vh] min-h-[360px] overflow-hidden">
         <Image
@@ -29,19 +34,19 @@ export default function SobreMiPage() {
 
       {/* ── Sección 2: Contenido principal ── */}
       <section
-        className="w-full py-14 px-8"
+        className="w-full py-14 px-4"
         style={{ backgroundColor: "var(--color-warm)" }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl  mx-auto">
           {/* Label top */}
-          <p className="text-[9px] tracking-[0.35em] uppercase text-stone-700 font-medium mb-10">
+          <p className="text-[9px] tracking-[0.35em] uppercase text-stone-700 font-medium mb-2 md:mb-10">
             Sobre mí
           </p>
 
           {/* Grid principal */}
-          <div className="grid grid-cols-[auto_1fr_auto] gap-10 items-start">
+          <div className="grid  grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-4 md:gap-10 items-start">
             {/* Col izq — credenciales */}
-            <div className="flex flex-col self-center text-[9px] uppercase font-light text-stone-600">
+            <div className="hidden md:block flex flex-col self-center text-[9px] uppercase font-light text-stone-600">
               <p className="max-w-[180px]">
                 Fisioterapeuta especializada en suelo pélvico y salud de la
                 mujer
@@ -65,80 +70,39 @@ export default function SobreMiPage() {
               {/* Título grande + fotos absolutas */}
               <div className="relative" style={{ minHeight: 450 }}>
                 <h2
-                  className="text-3xl md:text-4xl xl:text-5xl font-sans leading-[1.1] max-w-2xl"
+                  className="text-3xl md:text-4xl xl:text-5xl font-sans z-11 relative leading-[1.1] max-w-2xl"
                   style={{ color: "var(--color-primary)" }}
                 >
                   Una fisioterapia que escucha, entiende y empodera
                 </h2>
 
-                {/* Foto 1 — arriba derecha, sola */}
-                <div
-                  className="absolute rounded-full overflow-hidden"
-                  style={{ top: 280, left: 10, width: 125, height: 125 }}
-                >
-                  <Image
-                    src="/vector-about-1.png"
-                    alt="Roser Sabater"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Foto 2 — fila inferior izquierda */}
-                <div
-                  className="absolute rounded-full overflow-hidden"
-                  style={{ top: 160, left: 130, width: 230, height: 230 }}
-                >
-                  <Image
-                    src="/vector-about-2.png"
-                    alt="Roser Sabater"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Foto 3 — fila inferior centro */}
-                <div
-                  className="absolute rounded-full overflow-hidden"
-                  style={{ top: 220, left: 367, width: 150, height: 150 }}
-                >
-                  <Image
-                    src="/ellipse-about-1.png"
-                    alt="Roser Sabater"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Foto 4 — fila inferior derecha, grande */}
-                <div
-                  className="absolute rounded-full overflow-hidden"
-                  style={{ top: 90, right: 105, width: 270, height: 270 }}
-                >
-                  <Image
-                    src="/vector-about-3.png"
-                    alt="Roser Sabater"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Foto 5 — debajo del centro */}
-                <div
-                  className="absolute rounded-full overflow-hidden"
-                  style={{ top: 10, right: 0, width: 160, height: 160 }}
-                >
-                  <Image
-                    src="/vector-about-5.png"
-                    alt="Roser Sabater"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                <HeroFloatingImages />
               </div>
 
               {/* Sub-sección: El origen */}
               <div>
-                <h3 className="text-lg font-semibold text-stone-900 mb-4">
+                <div className="flex md:hidden flex-col self-end text-right text-md uppercase font-light text-gray-700">
+                  <p>
+                    Fisioterapeuta especializada en suelo pélvico y salud de la
+                    mujer
+                  </p>
+                  <p>
+                    <strong className="font-semibold text-gray-950">
+                      Fundadora de{" "}
+                    </strong>
+                    Roser Sabater
+                  </p>
+                  <p>
+                    <strong className="font-semibold text-gray-950">
+                      Colegiada Nº
+                    </strong>{" "}
+                    (su número)
+                  </p>
+                </div>
+                <h3 className="md:text-lg text-3xl text-[var(--color-primary)] my-6 font-semibold mb-4">
                   El origen: Llenando un vacío en la salud femenina
                 </h3>
-                <div className="grid grid-cols-2 gap-8 text-sm text-stone-800 leading-relaxed">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg text-light text-gray-700 leading-relaxed">
                   <p>
                     Durante mis estudios de fisioterapia descubrí que existía
                     una especialidad capaz de dar respuesta a muchas necesidades
@@ -174,7 +138,7 @@ export default function SobreMiPage() {
       </section>
       {/* ── Sección 3: Rompiendo el silencio ── */}
       <section className="w-full py-16 px-8 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-[280px_1fr] gap-16 items-start">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-16 items-start">
           {/* Col izq — título + fotos */}
           <div className="flex flex-col gap-8">
             <h2
@@ -186,28 +150,7 @@ export default function SobreMiPage() {
 
             {/* Dos fotos circulares escalonadas */}
             <div className="relative" style={{ height: 220 }}>
-              <div
-                className="absolute rounded-full overflow-hidden"
-                style={{ top: 0, left: 100, width: 130, height: 130 }}
-              >
-                <Image
-                  src="/vector-about-6.png"
-                  alt="Roser Sabater consulta"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div
-                className="absolute rounded-full overflow-hidden"
-                style={{ top: 100, left: 0, width: 160, height: 160 }}
-              >
-                <Image
-                  src="/vector-about-7.png"
-                  alt="Roser Sabater tratamiento"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <SilencioImages />
             </div>
           </div>
 
@@ -258,12 +201,12 @@ export default function SobreMiPage() {
         <div className="absolute inset-0 bg-black/45" />
 
         <div
-          className="relative z-10 max-w-6xl rounded-4xl mx-auto px-6 py-8 grid grid-cols-2 gap-8"
+          className="relative z-10 max-w-6xl rounded-4xl mx-2 my-6 md:mx-auto px-4 md:px-8 py-8 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8"
           style={{
             background: "linear-gradient(to right, #b9a9bf6c, transparent)",
           }}
         >
-          <div className="flex flex-col gap-5 p-8">
+          <div className="flex flex-col gap-5">
             <h2
               className="text-4xl xl:text-5xl leading-[1.0] max-w-[340px] font-extralight"
               style={{ color: "var(--color-accent)" }}
@@ -282,9 +225,9 @@ export default function SobreMiPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-5 p-8">
+          <div className="flex flex-col gap-5 md:text-right">
             <h2
-              className="text-4xl xl:text-5xl leading-[1.0] max-w-[340px] font-extralight"
+              className="text-4xl xl:text-5xl leading-[1.0] max-w-[340px] self-end font-extralight"
               style={{ color: "var(--color-accent)" }}
             >
               Mi compromiso contigo
@@ -308,8 +251,13 @@ export default function SobreMiPage() {
         style={{ backgroundColor: "var(--color-accent)" }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-[200px_1fr] gap-12 items-start">
-            <div className="relative w-full self-end aspect-square rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] md:grid-rows-[auto_1fr] gap-12 items-start">
+            {/* Título — mobile: 1º, desktop: col 2 fila 1 */}
+            <h2 className="md:col-start-2 md:row-start-1 text-3xl xl:text-5xl font-light text-[var(--color-primary)] font-extralight">
+              Formación y Experiencia
+            </h2>
+            {/* Foto — mobile: 2º, desktop: col 1 filas 1-2 */}
+            <div className="md:col-start-1 md:row-start-1 md:row-span-2 relative w-full self-center aspect-square rounded-lg overflow-hidden">
               <Image
                 src="/about-formacion.jpg"
                 alt="Roser Sabater"
@@ -317,30 +265,46 @@ export default function SobreMiPage() {
                 className="object-cover object-top"
               />
             </div>
-            <div className="flex flex-col gap-8">
-              <h2 className="text-3xl xl:text-5xl font-light text-[var(--color-primary)] font-extralight mb-14">
-                Formación y Experiencia
-              </h2>
-              <div className="grid grid-cols-3 gap-16 text-lg font-light">
-                <div className="flex flex-col gap-3 max-w-[200px]">
-                  <h3 className="text-xl">Experiencia Cuantificable</h3>
-                  <p className="text-sm text-stone-700 leading-relaxed">
+            {/* Texto — mobile: 3º, desktop: col 2 fila 2 */}
+            <div className="md:col-start-2 md:row-start-2 flex flex-col gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8 text-lg font-light">
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <Medal
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Experiencia Cuantificable
+                  </h3>
+                  <p className="text-lg text-gray-700">
                     Más de 800 mujeres tratadas con éxito en problemas de suelo
                     pélvico (disfunción, embarazo, posparto y sexualidad).
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3 max-w-[200px]">
-                  <h3 className="text-xl">Especialización Principal</h3>
-                  <p className="text-sm text-stone-700 leading-relaxed">
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <GraduationCap
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Especialización Principal
+                  </h3>
+                  <p className="text-lg text-gray-700">
                     Fisioterapeuta experta en Reeducación Abdominopélvica (Suelo
                     pélvico, Obstetricia y Sexualidad Femenina).
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3 max-w-[200px]">
-                  <h3 className="text-xl">Métodos Diferenciales</h3>
-                  <p className="text-sm text-stone-700 leading-relaxed">
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <Activity
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Métodos Diferenciales
+                  </h3>
+                  <p className="text-lg text-gray-700">
                     Dominio de metodologías clave como el Método Hipopresivo
                     (Marcel Caufriez), la Fisiogenómica y la Terapia Visceral.
                   </p>

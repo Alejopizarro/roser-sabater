@@ -12,8 +12,10 @@ const SERVICES = [
       <>
         Recupera el control urinario, elimina el dolor durante las relaciones y
         di adiós a la sensación de peso en la pelvis. Si sufres{" "}
-        <strong>escapes de orina, prolapso, dolor pélvico o disfunción sexual</strong>,
-        no tienes que resignarte: existe tratamiento efectivo y personalizado.
+        <strong>
+          escapes de orina, prolapso, dolor pélvico o disfunción sexual
+        </strong>
+        , no tienes que resignarte: existe tratamiento efectivo y personalizado.
       </>,
       <>
         A través de la <strong>fisioterapia de suelo pélvico</strong> trabajamos
@@ -41,14 +43,16 @@ const SERVICES = [
         puedes aliviarlos y prepararte de forma activa para el parto.
       </>,
       <>
-        Trabajamos la <strong>preparación perineal, la movilidad de cadera</strong>{" "}
-        y la conciencia corporal para que llegues al parto con más recursos,
-        menos miedo y un cuerpo que sabe lo que va a hacer.
+        Trabajamos la{" "}
+        <strong>preparación perineal, la movilidad de cadera</strong> y la
+        conciencia corporal para que llegues al parto con más recursos, menos
+        miedo y un cuerpo que sabe lo que va a hacer.
       </>,
       <>
-        También prevenimos la <strong>diástasis abdominal y los desgarros</strong>{" "}
-        perineales, dos de las consecuencias más comunes del parto que con
-        acompañamiento adecuado se pueden minimizar significativamente.
+        También prevenimos la{" "}
+        <strong>diástasis abdominal y los desgarros</strong> perineales, dos de
+        las consecuencias más comunes del parto que con acompañamiento adecuado
+        se pueden minimizar significativamente.
       </>,
     ],
   },
@@ -61,8 +65,8 @@ const SERVICES = [
       <>
         El posparto es un momento de grandes cambios físicos y emocionales. El
         cuerpo necesita tiempo y acompañamiento para sanar bien, ya sea tras un{" "}
-        <strong>parto vaginal o una cesárea</strong>. Empezar la recuperación
-        de forma adecuada marca la diferencia a largo plazo.
+        <strong>parto vaginal o una cesárea</strong>. Empezar la recuperación de
+        forma adecuada marca la diferencia a largo plazo.
       </>,
       <>
         Evaluamos tu <strong>suelo pélvico, el abdomen y la cicatriz</strong>{" "}
@@ -71,9 +75,9 @@ const SERVICES = [
         respetamos tu proceso.
       </>,
       <>
-        El objetivo es que recuperes tu <strong>fuerza, tu funcionalidad y tu
-        bienestar</strong>, para que puedas cuidar a tu bebé desde un cuerpo que
-        también se siente cuidado.
+        El objetivo es que recuperes tu{" "}
+        <strong>fuerza, tu funcionalidad y tu bienestar</strong>, para que
+        puedas cuidar a tu bebé desde un cuerpo que también se siente cuidado.
       </>,
     ],
   },
@@ -90,15 +94,17 @@ const SERVICES = [
         liberar esas tensiones sin cirugía.
       </>,
       <>
-        El trabajo sobre la cicatriz <strong>mejora la sensibilidad de la zona</strong>,
-        reduce el dolor durante las relaciones y devuelve movilidad a los tejidos
-        circundantes, incluyendo vejiga, útero e intestino.
+        El trabajo sobre la cicatriz{" "}
+        <strong>mejora la sensibilidad de la zona</strong>, reduce el dolor
+        durante las relaciones y devuelve movilidad a los tejidos circundantes,
+        incluyendo vejiga, útero e intestino.
       </>,
       <>
         Muchas mujeres llegan sintiéndose desconectadas de esa parte de su
         cuerpo. El tratamiento también trabaja{" "}
         <strong>la reconexión y la aceptación</strong>, para que esa cicatriz
-        deje de ser una fuente de malestar y se integre como parte de tu historia.
+        deje de ser una fuente de malestar y se integre como parte de tu
+        historia.
       </>,
     ],
   },
@@ -108,7 +114,7 @@ export default function ServiciosPage() {
   return (
     <main className="bg-[var(--background)] pt-20 min-h-screen">
       <section className="w-full py-16 px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-[160px_1fr] gap-16 items-start">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 items-start">
           {/* Col izq — label */}
           <p className="text-[9px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
             Servicios

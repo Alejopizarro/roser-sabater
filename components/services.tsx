@@ -51,26 +51,23 @@ const SERVICES = [
 export default function Services() {
   return (
     <section id="servicios" className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="flex items-baseline gap-10 mb-12">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-medium shrink-0">
+        <div className="flex flex-col sm:flex-row items-baseline gap-x-10 gap-y-2 mb-8 md:mb-12">
+          <span className="md:text-[10px] text-sm font-medium tracking-[0.3em] uppercase text-stone-500 shrink-0">
             Servicios
           </span>
-          <h2
-            className="text-5xl xl:text-6xl text-[#7B2050] font-normal"
-            style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
-          >
+          <h2 className="text-4xl xl:text-6xl text-[var(--color-primary)] font-light">
             Así te puedo ayudar
           </h2>
         </div>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {SERVICES.map(({ image, alt, title, paragraphs, cta, href }) => (
             <div key={title} className="flex flex-col gap-5">
               {/* Image card with overlay */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+              <div className="relative h-[300px] rounded-4xl overflow-hidden aspect-[3/4]">
                 <Image src={image} alt={alt} fill className="object-cover" />
                 {/* Gradient for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
@@ -94,7 +91,7 @@ export default function Services() {
                 {paragraphs.map((p) => (
                   <p
                     key={p}
-                    className="text-[13px] text-stone-600 leading-relaxed"
+                    className="text-lg md:text-[13px] font-extralight text-gray-600"
                   >
                     {p}
                   </p>

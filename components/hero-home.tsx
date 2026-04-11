@@ -1,4 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroHome() {
   return (
@@ -8,34 +10,38 @@ export default function HeroHome() {
         src="/hero-roser.png"
         alt="Roser Sabater fisioterapeuta especialista en suelo pélvico"
         fill
-        className="object-cover object-center"
+        className="object-cover object-[25%_75%] sm:object-center"
         priority
       />
 
-      <div className="absolute inset-0 z-10">
-        <div className="max-w-7xl mx-auto px-8 pt-15 h-full flex flex-col">
+      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-8 sm:pt-15 h-full flex flex-col justify-center">
+        <div className="">
           {/* div-1 — centrado verticalmente */}
-          <div className="flex-1 flex items-center">
-            <div className="max-w-2xl">
-              <p className="text-[8px] tracking-[0.35em] uppercase text-stone-900 font-medium mb-5">
-                Roser Sabater Especialista en Suelo Pélvico
-              </p>
-              <h1
-                className="text-4xl xl:text-5xl leading-[1.1] text-stone-900 font-light"
-                style={{ fontFamily: "var(--font-open-sans)" }}
-              >
-                Recupera tu
-                <br />
-                fuerza, movilidad
-                <br />y confianza.
-              </h1>
-            </div>
+          <div className="max-w-2xl flex flex-col gap-2">
+            <p className="text-sm sm:text-[8px] tracking-[0.35em] uppercase text-gray-600 font-semibold mb-5">
+              Roser Sabater Especialista en Suelo Pélvico
+            </p>
+            <h1
+              className="text-6xl sm:text-5xl lg:text-6xlleading-[1.1] text-stone-900 font-light"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Recupera tu
+              <br />
+              fuerza, movilidad
+              <br />y confianza.
+            </h1>
+            <Link
+              href="#cita"
+              className="flex items-center justify-center w-3/4 md:hidden bg-[var(--color-foreground)] mt-8 text-[var(--color-accent)] text-sm text-center tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
+            >
+              PIDE CITA <ArrowRight className="inline-block ml-2" size={20} />
+            </Link>
           </div>
 
           {/* div-2 — pegado al fondo */}
-          <div className="overflow-hidden  leading-none">
+          <div className="absolute sm:relative bottom-0 left-0 right-0 leading-none">
             <p
-              className="text-[12rem] leading-[0.88] font-light tracking-[-0.01em] text-stone-900 whitespace-nowrap"
+              className="text-[4.4rem] sm:text-[12rem] leading-[0.88] font-light tracking-[-0.01em] text-stone-900 whitespace-nowrap"
               style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
             >
               R
@@ -47,9 +53,9 @@ export default function HeroHome() {
                 aria-hidden="true"
                 className="inline-block align-text-bottom"
                 style={{
-                  height: "0.62em",
+                  height: "0.65em",
                   width: "auto",
-                  marginBottom: "0.08em",
+                  marginBottom: "0.10em",
                 }}
               >
                 <path

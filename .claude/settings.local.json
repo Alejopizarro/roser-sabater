@@ -3,7 +3,10 @@
     "allow": [
       "Bash(mkdir -p c:/Users/alejo/desktop/roser-sabater/components/ui)",
       "Bash(mkdir -p c:/Users/alejo/desktop/roser-sabater/components/sections)",
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const pkg = require\\('./node_modules/motion/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(npx tsc:*)"
     ]
   }
 }

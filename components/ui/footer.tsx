@@ -3,12 +3,12 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
-      className="w-full px-10 py-10"
+      className="w-full px-6 md:px-10 py-10"
       style={{ backgroundColor: "var(--color-warm)" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-3 items-start gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-start gap-8">
         {/* Col 1 — Info */}
-        <div className="flex flex-col gap-6 text-sm text-stone-900">
+        <div className="flex flex-col items-center md:items-start gap-6 text-sm text-stone-900 text-center md:text-left order-2 md:order-1">
           <div>
             <p className="font-medium">Lunes a Viernes:</p>
             <p>9h — 17h</p>
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         {/* Col 2 — Logo + legal */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 order-1 md:order-2">
           <p
             className="text-5xl leading-tight text-stone-900 text-center font-mono"
           >
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         {/* Col 3 — Redes */}
-        <div className="flex flex-col items-end gap-4">
+        <div className="flex flex-row md:flex-col items-center justify-center md:items-end gap-4 order-3">
           <a
             href="https://instagram.com"
             target="_blank"
