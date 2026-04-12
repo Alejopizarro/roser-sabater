@@ -1,9 +1,12 @@
-import Image from "next/image";
+import {
+  DoubleSectionBubbles,
+  TestimonialImage,
+} from "@/components/about-animated-images";
 import Link from "next/link";
 
 // Positions originally at 1728px design width, scaled to max-w-7xl (1280px).
 // Scale factor: 1280 / 1728 = 0.741
-const CONTAINER_H = 545; // 736 × 0.741
+const CONTAINER_H = 505; // 736 × 0.741
 const OVERLAP = CONTAINER_H / 2; // 272
 
 export default function DoubleSection() {
@@ -14,7 +17,7 @@ export default function DoubleSection() {
         className="w-full bg-white pt-14"
         style={{ paddingBottom: OVERLAP }}
       >
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-12">
           {/* Label */}
           <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-medium mb-4 md:mb-10">
             Mi espacio
@@ -23,10 +26,7 @@ export default function DoubleSection() {
           <div className="flex flex-col md:flex-row gap-12">
             {/* Left: big heading */}
             <div className="md:w-[28%] shrink-0">
-              <h2
-                className="text-4xl xl:text-5xl leading-[1.15] text-[#3D1808] font-normal"
-                style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
-              >
+              <h2 className="text-5xl leading-[1.15] text-[var(--color-primary)] font-normal">
                 Un lugar donde te sientes como en casa
               </h2>
             </div>
@@ -58,7 +58,7 @@ export default function DoubleSection() {
                 </p>
                 <Link
                   href="/sobre-mi"
-                  className="w-full mt-4 text-center md:w-fit self-start bg-[var(--color-foreground)] text-[var(--color-accent)] text-md tracking-[0.18em] font-medium px-6 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
+                  className="w-full mt-4 text-center md:w-fit self-start bg-[var(--color-foreground)] text-[var(--color-accent)] text-sm tracking-[0.18em] font-medium px-6 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
                 >
                   CONOCE MÁS SOBRE MÍ
                 </Link>
@@ -69,7 +69,6 @@ export default function DoubleSection() {
       </section>
 
       {/* ── BUBBLES — constrained to max-w-7xl, straddles both sections ── */}
-      {/* Section boundary sits at y = OVERLAP (272px) inside this container */}
       <div
         className="relative z-10 w-full"
         style={{
@@ -79,164 +78,34 @@ export default function DoubleSection() {
         }}
       >
         <div className="relative max-w-7xl mx-auto h-full px-8">
-          {/* burble-1 — small, upper-left, fully in white zone */}
-          <div
-            className="absolute hidden sm:block"
-            style={{ top: 80, left: 28, width: 148, height: 148 }}
-          >
-            <Image
-              src="/burble-vector-1.png"
-              alt="Espacio Roser Sabater"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div
-            className="absolute sm:hidden"
-            style={{ top: 148, left: -35, width: 148, height: 148 }}
-          >
-            <Image
-              src="/burble-vector-1.png"
-              alt="Espacio Roser Sabater"
-              fill
-              className="object-contain"
-            />
-          </div>
-          {/* burble-2 — large, straddles boundary */}
-          <div
-            className="absolute hidden sm:block"
-            style={{ top: 148, left: 118, width: 300, height: 260 }}
-          >
-            <Image
-              src="/burble-vector-2.png"
-              alt="Consulta fisioterapia"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div
-            className="absolute sm:hidden"
-            style={{ top: 208, left: 68, width: 220, height: 200 }}
-          >
-            <Image
-              src="/burble-vector-2.png"
-              alt="Consulta fisioterapia"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* burble-3 — medium, center-left, slightly into lavender */}
-          <div
-            className="absolute hidden sm:block"
-            style={{ top: 260, left: 388, width: 200, height: 193 }}
-          >
-            <Image
-              src="/burble-vector-3.png"
-              alt="Sala de tratamiento"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div
-            className="absolute sm:hidden"
-            style={{ top: 300, left: 260, width: 140, height: 135 }}
-          >
-            <Image
-              src="/burble-vector-3.png"
-              alt="Sala de tratamiento"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* burble-4 — large oval, center, spans boundary */}
-          <div
-            className="absolute hidden sm:block"
-            style={{ top: 47, left: 558, width: 278, height: 333 }}
-          >
-            <Image
-              src="/burble-vector-4.png"
-              alt="Equipamiento clínica"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div
-            className="absolute sm:hidden"
-            style={{ top: 47, left: 280, width: 220, height: 280 }}
-          >
-            <Image
-              src="/burble-vector-4.png"
-              alt="Equipamiento clínica"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* burble-5 — large, right side, spans boundary */}
-          <div
-            className="absolute hidden sm:block"
-            style={{ top: 150, left: 860, width: 263, height: 296 }}
-          >
-            <Image
-              src="/burble-vector-5.png"
-              alt="Espacio pilates"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* burble-6 — small, far right, fully in white zone */}
-          <div
-            className="absolute"
-            style={{ top: 74, left: 1090, width: 163, height: 163 }}
-          >
-            <Image
-              src="/burble-vector-6.png"
-              alt="Sala con espejo"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <DoubleSectionBubbles />
         </div>
       </div>
 
       {/* ── BOTTOM SECTION: Testimonial ── */}
       <section
-        className="w-full bg-[#B9A9BF] pb-14"
+        className="w-full bg-[#B9A9BF] py-14"
         style={{ paddingTop: OVERLAP }}
       >
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center gap-14">
-            {/* Left: circular treatment image + label */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-12">
+          <div className="flex flex-col md:flex-row md:items-center gap-14">
+            {/* Left: image + label */}
             <div className="flex flex-col items-start gap-4 shrink-0">
               <p className="text-[10px] tracking-[0.3em] uppercase text-[#7B2050] font-semibold">
                 Qué dicen de mí
               </p>
-              <div className="relative w-52 h-52 rounded-lg overflow-hidden">
-                <Image
-                  src="/dicen-de-mi.png"
-                  alt="Tratamiento fisioterapia"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <TestimonialImage />
             </div>
 
             {/* Right: quote + testimonial text + name + dots */}
-            <div className="flex-1 flex gap-12 items-start">
-              <blockquote
-                className="text-3xl xl:text-4xl leading-[1.2] text-[#7B2050] font-normal w-[45%] shrink-0"
-                style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
-              >
+            <div className="flex-1 flex flex-col md:flex-row gap-x-12 gap-y-8 items-start">
+              <blockquote className="text-4xl text-[#7B2050] font-medium italic font-[var(--font-mono)] md:w-[45%] shrink-0">
                 &ldquo;Volver a sentirme segura en mi cuerpo ha sido un
                 regalo&rdquo;
               </blockquote>
 
               <div className="flex flex-col gap-5 flex-1">
-                <p className="text-[13px] text-stone-700 leading-relaxed">
+                <p className="text-sm text-stone-700">
                   Llegué con pérdidas de orina que me limitaban cada día y con
                   mucha vergüenza. Roser me explicó todo con claridad y me hizo
                   sentir acompañada desde el primer momento. Hoy controlo mi

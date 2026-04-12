@@ -21,17 +21,25 @@ export default function PostpartoMobile() {
       <div className="absolute inset-0">
         {/* Left card — gradient left → transparent */}
         <div
-          className="absolute backdrop-blur-xs flex flex-col justify-between p-4"
+          className="absolute"
           style={{
             left: "10px",
             top: "142px",
             width: "250px",
             height: "400px",
             borderRadius: "50px",
-            background: "linear-gradient(to right, #f5bf9e7e, transparent)",
           }}
         >
-          <div className="flex flex-col h-full justify-center max-w-4/6">
+          {/* Blur layer */}
+          <div
+            className="absolute inset-0 backdrop-blur-xs"
+            style={{
+              borderRadius: "50px",
+              background: "linear-gradient(to right, #f5bf9e7e, transparent)",
+            }}
+          />
+          {/* Text layer — above blur */}
+          <div className="relative z-10 flex flex-col h-full justify-center p-4 max-w-4/6">
             <h3 className="text-white text-3xl mb-8 font-extralight">
               Prepárate
               <br />
@@ -46,26 +54,36 @@ export default function PostpartoMobile() {
 
         {/* Right card — gradient transparent ← right */}
         <div
-          className="absolute backdrop-blur-xs flex flex-col justify-between p-4 text-right"
+          className="absolute"
           style={{
             right: "10px",
             top: "142px",
             width: "250px",
             height: "400px",
             borderRadius: "50px",
-            background: "linear-gradient(to left, #f5bf9e7e, transparent)",
           }}
         >
-          <div className="flex flex-col self-end h-full justify-center max-w-4/6">
-            <h3 className="text-white text-3xl mb-8 font-extralight">
-              Prepárate
-              <br />
-              para el posparto
-            </h3>
-            <p className="text-white/85 text-sm leading-relaxed">
-              En el posparto, el pilates te acompaña a recuperar tu fuerza,
-              cuidarte y volver a sentir tu cuerpo tuyo.
-            </p>
+          {/* Blur layer */}
+          <div
+            className="absolute inset-0 backdrop-blur-xs"
+            style={{
+              borderRadius: "50px",
+              background: "linear-gradient(to left, #f5bf9e7e, transparent)",
+            }}
+          />
+          {/* Text layer — above blur */}
+          <div className="relative z-10 flex flex-col self-end h-full justify-center p-4 text-right items-end">
+            <div className="max-w-4/6">
+              <h3 className="text-white text-3xl mb-8 font-extralight">
+                Prepárate
+                <br />
+                para el posparto
+              </h3>
+              <p className="text-white/85 text-sm leading-relaxed">
+                En el posparto, el pilates te acompaña a recuperar tu fuerza,
+                cuidarte y volver a sentir tu cuerpo tuyo.
+              </p>
+            </div>
           </div>
         </div>
 
