@@ -1,6 +1,7 @@
 import {
   AboutMeImages,
   AboutMeMobileImage,
+  AnimatedQuote,
 } from "@/components/about-animated-images";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ export default function AboutMe() {
       id="sobre-mi"
       className="relative w-full bg-[#FBE67B] py-14 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-12">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-12">
         {/* Top label */}
         <p className="text-[10px] tracking-[0.3em] uppercase text-[#3D1808] font-medium mb-10">
           Conoce más sobre mí
@@ -29,12 +30,7 @@ export default function AboutMe() {
 
           {/* Main content: quote + list */}
           <div className="flex-1 max-w-4xl md:px-10 font-light min-w-0">
-            <blockquote className="text-[2.4rem] z-10 relative xl:text-[3.0rem] leading-[1.0] text-[#872B64] font-normal mb-4">
-              Sé lo que es sentirse sola en este camino. La falta de
-              información, el dolor que normalizas pensando que &ldquo;es lo que
-              hay&rdquo;... puede hacerte sentir perdida. Pero no tiene que ser
-              así.
-            </blockquote>
+            <AnimatedQuote className="text-[2.4rem] font-mono z-10 relative xl:text-[3.0rem] leading-[1.15] text-[#872B64] font-light mb-4" />
 
             <div>
               <AboutMeMobileImage />

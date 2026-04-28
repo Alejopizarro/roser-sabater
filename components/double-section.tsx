@@ -77,7 +77,7 @@ export default function DoubleSection() {
           marginBottom: -OVERLAP,
         }}
       >
-        <div className="relative max-w-7xl mx-auto h-full px-8">
+        <div className="relative max-w-7xl mx-auto h-full px-8 overflow-hidden">
           <DoubleSectionBubbles />
         </div>
       </div>

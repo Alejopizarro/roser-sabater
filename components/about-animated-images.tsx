@@ -215,7 +215,7 @@ export function AboutMeImages() {
       <AnimatedCircle
         src="/second-section-3.jpg"
         alt="Roser Sabater"
-        className="absolute hidden md:block z-8 top-15 right-45 w-42 h-42 rounded-full overflow-hidden"
+        className="absolute hidden md:block z-8 top-0 right-5 w-42 h-42 rounded-full overflow-hidden"
         delay={0}
         fromX={28}
         fromY={-8}
@@ -387,6 +387,33 @@ export function DoubleSectionBubbles() {
         imageClassName="object-contain"
       />
     </>
+  );
+}
+
+// ── AboutMe: blockquote animado línea a línea ──
+const QUOTE_LINES = [
+  "Sé lo que es sentirse sola en este camino.",
+  "La falta de información, el dolor que normalizas pensando que \u00abEs lo que hay\u00bb\u2026",
+  "Pero no tiene que ser así.",
+];
+
+export function AnimatedQuote({ className }: { className?: string }) {
+  return (
+    <blockquote className={className}>
+      {QUOTE_LINES.map((line, i) => (
+        <span key={i} className="block overflow-hidden">
+          <motion.span
+            className="block"
+            initial={{ opacity: 0, y: "60%" }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            viewport={{ once: true, margin: "0px" }}
+            transition={{ duration: 0.8, delay: i * 0.18, ease }}
+          >
+            {line}
+          </motion.span>
+        </span>
+      ))}
+    </blockquote>
   );
 }
 

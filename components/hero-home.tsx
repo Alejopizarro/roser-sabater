@@ -14,15 +14,15 @@ export default function HeroHome() {
         priority
       />
 
-      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-12 sm:pt-15 h-full flex flex-col justify-center">
+      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
         <div className="">
           {/* div-1 — centrado verticalmente */}
-          <div className="max-w-2xl flex flex-col gap-2">
-            <h1 className="text-md sm:text-[8px] tracking-[0.35em] uppercase text-gray-600 font-semibold mb-2">
+          <div className="max-w-2xl flex flex-col gap-2 md:-translate-y-1/4">
+            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase text-gray-600 font-semibold mb-2">
               Roser Sabater - Especialista en Suelo Pélvico
             </h1>
             <p
-              className="text-6xl sm:text-5xl lg:text-6xlleading-[1.1] mb-4 text-stone-900 font-light"
+              className="text-6xl sm:text-5xl 2xl:text-7xl leading-[1.1] mb-4 text-stone-900 font-light"
               style={{ fontFamily: "var(--font-open-sans)" }}
             >
               Recupera tu
@@ -39,7 +39,7 @@ export default function HeroHome() {
           </div>
 
           {/* div-2 — pegado al fondo */}
-          <div className="absolute sm:relative bottom-0 left-3 right-0 leading-none">
+          <div className="absolute bottom-0 left-0 px-4 leading-none">
             <p
               className="text-[4.2rem] sm:text-[12rem] leading-[0.88] font-light tracking-[-0.01em] text-stone-900 whitespace-nowrap"
               style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
