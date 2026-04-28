@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const SERVICES = [
   {
@@ -63,9 +66,25 @@ export default function Services() {
         </div>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.25 } },
+          }}
+        >
           {SERVICES.map(({ image, alt, title, paragraphs, cta, href }) => (
-            <div key={title} className="flex flex-col gap-5">
+            <motion.div
+              key={title}
+              className="flex flex-col gap-5"
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } },
+              }}
+            >
               {/* Image card with overlay */}
               <div className="relative h-[300px] rounded-4xl overflow-hidden aspect-[3/4]">
                 <Image src={image} alt={alt} fill className="object-cover" />
@@ -105,9 +124,9 @@ export default function Services() {
               >
                 {cta}
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
