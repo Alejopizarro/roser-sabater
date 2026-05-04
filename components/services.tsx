@@ -82,18 +82,25 @@ export default function Services() {
               className="flex flex-col gap-5"
               variants={{
                 hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1.0, ease: "easeOut" },
+                },
               }}
             >
               {/* Image card with overlay */}
-              <div className="relative h-[300px] rounded-4xl overflow-hidden aspect-[3/4]">
+              <div className="relative h-[300px] rounded-[50px] overflow-hidden aspect-[3/4]">
                 <Image src={image} alt={alt} fill className="object-cover" />
                 {/* Gradient for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                 {/* Plus icon */}
-                <span className="absolute top-4 right-4 text-white text-2xl font-extralight leading-none">
+                <a
+                  href="/servicios"
+                  className="absolute top-6 right-6 text-white text-2xl font-extralight leading-none"
+                >
                   +
-                </span>
+                </a>
                 {/* Service title */}
                 <p
                   className="absolute bottom-4 left-4 right-4 text-white text-xl font-normal leading-snug"

@@ -1,8 +1,10 @@
 import {
   DoubleSectionBubbles,
   TestimonialImage,
+  TestimonialBlockquote,
 } from "@/components/about-animated-images";
 import Link from "next/link";
+import { TestimonialCarousel } from "@/components/ui/carousel";
 
 // Positions originally at 1728px design width, scaled to max-w-7xl (1280px).
 // Scale factor: 1280 / 1728 = 0.741
@@ -87,43 +89,17 @@ export default function DoubleSection() {
         className="w-full bg-[#B9A9BF] py-14"
         style={{ paddingTop: OVERLAP }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-12">
-          <div className="flex flex-col md:flex-row md:items-center gap-14">
+        <div className="max-w-7xl space-y-8 md:space-y-12 mx-auto px-4 py-8 sm:py-14 sm:px-12">
+          <p className="text-sm uppercase font-semibold ">Qué dicen de mí</p>
+          <div className="flex flex-col md:flex-row md:items-start gap-14">
             {/* Left: image + label */}
             <div className="flex flex-col items-start gap-4 shrink-0">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#7B2050] font-semibold">
-                Qué dicen de mí
-              </p>
               <TestimonialImage />
             </div>
+            <TestimonialBlockquote className="text-4xl md:text-5xl text-[#FBE67B] font-extralight md:w-[45%] shrink-0" />
 
-            {/* Right: quote + testimonial text + name + dots */}
-            <div className="flex-1 flex flex-col md:flex-row gap-x-12 gap-y-8 items-start">
-              <blockquote className="text-4xl text-[#7B2050] font-medium italic font-[var(--font-mono)] md:w-[45%] shrink-0">
-                &ldquo;Volver a sentirme segura en mi cuerpo ha sido un
-                regalo&rdquo;
-              </blockquote>
-
-              <div className="flex flex-col gap-5 flex-1">
-                <p className="text-sm text-stone-700">
-                  Llegué con pérdidas de orina que me limitaban cada día y con
-                  mucha vergüenza. Roser me explicó todo con claridad y me hizo
-                  sentir acompañada desde el primer momento. Hoy controlo mi
-                  cuerpo, el dolor desapareció y he recuperado una confianza que
-                  pensaba que había perdido para siempre.
-                </p>
-                <div>
-                  <p className="text-sm font-medium text-stone-800">Sofía</p>
-                  <p className="text-[12px] text-stone-500">Suelo pélvico</p>
-                </div>
-                {/* Pagination dots */}
-                <div className="flex gap-2 mt-2">
-                  <span className="w-2 h-2 rounded-full bg-[#7B2050]" />
-                  <span className="w-2 h-2 rounded-full bg-[#7B2050]/30" />
-                  <span className="w-2 h-2 rounded-full bg-[#7B2050]/30" />
-                </div>
-              </div>
-            </div>
+            {/* Right: testimonial carousel */}
+            <TestimonialCarousel />
           </div>
         </div>
       </section>

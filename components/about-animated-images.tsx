@@ -417,11 +417,26 @@ export function AnimatedQuote({ className }: { className?: string }) {
   );
 }
 
+// ── DoubleSection: blockquote testimonial animado ──
+export function TestimonialBlockquote({ className }: { className?: string }) {
+  return (
+    <motion.blockquote
+      className={className}
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px" }}
+      transition={{ duration: 1.8, delay: 0.85, ease }}
+    >
+      &ldquo;Volver a sentirme segura en mi cuerpo ha sido un regalo&rdquo;
+    </motion.blockquote>
+  );
+}
+
 // ── DoubleSection: imagen testimonial ──
 export function TestimonialImage() {
   return (
     <motion.div
-      className="relative md:w-52 w-full h-82 md:h-52 rounded-lg overflow-hidden"
+      className="relative md:w-52 w-full h-82 md:h-52 rounded-[50px] overflow-hidden"
       initial={{ opacity: 0, x: -12, scale: 0.95 }}
       whileInView={{ opacity: 1, x: 0, scale: 1 }}
       viewport={{ once: true, margin: "0px" }}
