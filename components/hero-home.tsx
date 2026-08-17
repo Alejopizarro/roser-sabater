@@ -4,21 +4,32 @@ import Link from "next/link";
 
 export default function HeroHome() {
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
-      {/* Background image */}
+    <section
+      className="relative w-full h-screen min-h-210 overflow-hidden"
+      style={{ backgroundColor: "var(--color-warm)" }}
+    >
+      {/* Background photo — fills the entire section, cropped in tight on the two women */}
       <Image
-        src="/hero-roser.png"
+        src="/roser-hero-hor.jpeg"
         alt="Roser Sabater fisioterapeuta especialista en suelo pélvico"
         fill
-        className="object-cover object-[25%_75%] sm:object-center"
-        priority
+        className="object-cover object-[90%_38%]"
+        preload
+        quality={95}
+        sizes="100vw"
+      />
+
+      {/* Subtle, uniform tint so the dark text keeps enough contrast everywhere on the photo */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ backgroundColor: "rgba(255,255,255,0.22)" }}
       />
 
       <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
         <div className="">
           {/* div-1 — centrado verticalmente */}
           <div className="max-w-2xl flex flex-col gap-2 md:-translate-y-1/4">
-            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase text-gray-600 font-semibold mb-2">
+            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase font-semibold mb-2">
               Roser Sabater - Especialista en Suelo Pélvico
             </h1>
             <p

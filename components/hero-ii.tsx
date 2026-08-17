@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* Contenido */}
         <div className="absolute inset-0 z-[3] flex flex-col items-center -translate-y-6 justify-center text-center px-6 gap-4">
-          <h1 className="text-[0.7rem] font-semibold tracking-[0.22em] text-[var(--color-primary)] uppercase">
+          <h1 className="text-[0.7rem] font-semibold tracking-[0.22em] text-(--color-primary) uppercase">
             Roser Sabater · Especialista en Suelo Pélvico
           </h1>
 

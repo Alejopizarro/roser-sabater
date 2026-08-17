@@ -27,13 +27,12 @@ export default function Postparto() {
           alt="Sesión de pilates de suelo pélvico"
           width={1920}
           height={1080}
-          className="object-cover w-full max-h-[890px] object-center"
+          className="object-cover w-full max-h-[890px] "
         />
 
         {/* Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="max-w-7xl w-full h-full p-8 flex items-center">
-
             {/* Tarjeta unificada */}
             <div
               className="postparto-card w-full max-h-[590px] h-full rounded-3xl backdrop-blur-sm flex items-center"
@@ -46,7 +45,9 @@ export default function Postparto() {
               <div className="flex-1 flex flex-col gap-y-12 py-10 px-10">
                 <h3
                   className="text-white text-4xl xl:text-5xl font-normal leading-snug"
-                  style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
+                  style={{
+                    fontFamily: "var(--font-cormorant, Georgia, serif)",
+                  }}
                 >
                   Prepárate
                   <br />
@@ -70,7 +71,10 @@ export default function Postparto() {
                 />
                 <div
                   className="w-2 h-2 rounded-full"
-                  style={{ background: "#f5bf9e", boxShadow: "0 0 8px 3px #f5bf9e88" }}
+                  style={{
+                    background: "#f5bf9e",
+                    boxShadow: "0 0 8px 3px #f5bf9e88",
+                  }}
                 />
                 <div
                   className="glow-line w-px h-28 rounded-full"
@@ -86,7 +90,9 @@ export default function Postparto() {
               <div className="flex-1 flex flex-col gap-y-12 py-10 px-10 text-right">
                 <h3
                   className="text-white text-4xl xl:text-5xl font-normal leading-snug"
-                  style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
+                  style={{
+                    fontFamily: "var(--font-cormorant, Georgia, serif)",
+                  }}
                 >
                   Prepárate para
                   <br />
@@ -98,7 +104,6 @@ export default function Postparto() {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>

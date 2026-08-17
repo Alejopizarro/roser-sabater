@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${openSans.variable} ${bricolageGrotesque.variable} h-full antialiased`}
+      className={`${openSans.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />

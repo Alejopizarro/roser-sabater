@@ -1,32 +1,28 @@
-import Link from "next/link";
-import Accordion from "@/components/ui/accordion";
+import { MessageCircle } from "lucide-react";
+// import Accordion from "@/components/ui/accordion";
+import ServicesGrid from "@/components/ui/services-grid";
+import SessionsSection from "@/components/sessions-section";
+import FaqSection from "@/components/faq-section";
 import ContactSection from "@/components/contact-section";
 
 const SERVICES = [
   {
     image: "/suelo-pelvico.jpg",
     alt: "Suelo pélvico",
-    title: "Suelo pelvico",
+    title: "Suelo pélvico",
     heading: "Vuelve a sentirte segura, fuerte y libre en tu cuerpo.",
     paragraphs: [
       <>
-        Recupera el control urinario, elimina el dolor durante las relaciones y
-        di adiós a la sensación de peso en la pelvis. Si sufres{" "}
+        El suelo pélvico influye en mucho más de lo que imaginamos:{" "}
         <strong>
-          escapes de orina, prolapso, dolor pélvico o disfunción sexual
+          continencia, postura, estabilidad, sexualidad y bienestar diario
         </strong>
-        , no tienes que resignarte: existe tratamiento efectivo y personalizado.
+        .
       </>,
       <>
-        A través de la <strong>fisioterapia de suelo pélvico</strong> trabajamos
-        juntas la musculatura, la postura y los hábitos que influyen en tu
-        pelvis. Cada sesión es un espacio de escucha donde entendemos qué le
-        pasa a tu cuerpo y por qué.
-      </>,
-      <>
-        El objetivo no es solo aliviar los síntomas, sino que{" "}
-        <strong>entiendas tu cuerpo y recuperes la confianza</strong> en él para
-        hacer todo lo que quieras sin miedo ni limitaciones.
+        A través de un tratamiento personalizado, trabajamos síntomas como{" "}
+        <strong>pérdidas de orina, sensación de peso, dolor o debilidad</strong>{" "}
+        para ayudarte a recuperar confianza y calidad de vida.
       </>,
     ],
   },
@@ -34,25 +30,24 @@ const SERVICES = [
     image: "/embarazo.jpg",
     alt: "Embarazo",
     title: "Embarazo",
-    heading: "Prepara tu cuerpo para el parto y vive tu embarazo sin dolor.",
+    heading:
+      "Preparar tu cuerpo también es cuidar cómo quieres vivir tu parto y tu posparto.",
     paragraphs: [
       <>
-        El embarazo transforma tu cuerpo a un ritmo acelerado. El dolor lumbar,
-        la presión pélvica y los cambios posturales son frecuentes, pero{" "}
-        <strong>no son inevitables</strong>. Con fisioterapia especializada
-        puedes aliviarlos y prepararte de forma activa para el parto.
+        La fisioterapia durante el embarazo ayuda a acompañar los cambios del
+        cuerpo de forma más consciente,{" "}
+        <strong>
+          reduciendo molestias lumbares y pélvicas, mejorando la movilidad
+        </strong>{" "}
+        y favoreciendo una mejor adaptación física al embarazo.
       </>,
       <>
-        Trabajamos la{" "}
-        <strong>preparación perineal, la movilidad de cadera</strong> y la
-        conciencia corporal para que llegues al parto con más recursos, menos
-        miedo y un cuerpo que sabe lo que va a hacer.
-      </>,
-      <>
-        También prevenimos la{" "}
-        <strong>diástasis abdominal y los desgarros</strong> perineales, dos de
-        las consecuencias más comunes del parto que con acompañamiento adecuado
-        se pueden minimizar significativamente.
+        También trabajamos la{" "}
+        <strong>
+          preparación del suelo pélvico y la prevención de diástasis, desgarros
+          y episiotomías
+        </strong>
+        , ayudándote a llegar al parto con mayor confianza y bienestar.
       </>,
     ],
   },
@@ -60,51 +55,81 @@ const SERVICES = [
     image: "/postparto.jpg",
     alt: "Posparto",
     title: "Posparto",
-    heading: "Recupérate bien y vuelve a sentirte tú, a tu ritmo.",
+    heading: "Recupera tu cuerpo desde el cuidado, no desde la exigencia.",
     paragraphs: [
       <>
-        El posparto es un momento de grandes cambios físicos y emocionales. El
-        cuerpo necesita tiempo y acompañamiento para sanar bien, ya sea tras un{" "}
-        <strong>parto vaginal o una cesárea</strong>. Empezar la recuperación de
-        forma adecuada marca la diferencia a largo plazo.
+        El posparto necesita tiempo, atención y acompañamiento adecuado.
+        Trabajamos la{" "}
+        <strong>recuperación abdominal y del suelo pélvico</strong>,
+        adaptándonos a tu ritmo para que vuelvas a sentirte fuerte, conectada y
+        segura en tu cuerpo.
       </>,
       <>
-        Evaluamos tu <strong>suelo pélvico, el abdomen y la cicatriz</strong>{" "}
-        (si la hay) para diseñar un plan de recuperación adaptado a ti. No
-        existe una única forma correcta de recuperarse: vamos a tu ritmo y
-        respetamos tu proceso.
-      </>,
-      <>
-        El objetivo es que recuperes tu{" "}
-        <strong>fuerza, tu funcionalidad y tu bienestar</strong>, para que
-        puedas cuidar a tu bebé desde un cuerpo que también se siente cuidado.
+        Te acompaño en ese puente entre el parto y la vuelta a tu rutina, al
+        deporte y a tu día a día, ayudándote a{" "}
+        <strong>
+          recuperar confianza, bienestar y la sensación de volver a sentirte tú
+          misma
+        </strong>
+        .
       </>,
     ],
   },
   {
     image: "/tratamiento-cicatrices.png",
-    alt: "Tratamiento y dolor de cicatrices",
-    title: "Tratamiento y dolor de cicatrices",
-    heading: "Alivia el dolor y recupera la movilidad que creías perdida.",
+    alt: "Recuperación abdominal y tratamiento de cicatrices",
+    title: "Recuperación abdominal y tratamiento de cicatrices",
+    heading: "Recuperar movilidad y bienestar también forma parte de sanar.",
     paragraphs: [
       <>
-        Las cicatrices de <strong>cesárea, episiotomía o laparoscopia</strong>{" "}
-        pueden generar adherencias, tirantez y dolor que persiste meses o años
-        después de la intervención. Con fisioterapia visceral y manual podemos
-        liberar esas tensiones sin cirugía.
+        La fisioterapia especializada puede ayudarte en la recuperación tras una{" "}
+        <strong>
+          abdominoplastia, una técnica REPA, una cesárea o una episiotomía
+        </strong>
+        , acompañando el proceso de forma segura y respetuosa con tu cuerpo.
       </>,
       <>
-        El trabajo sobre la cicatriz{" "}
-        <strong>mejora la sensibilidad de la zona</strong>, reduce el dolor
-        durante las relaciones y devuelve movilidad a los tejidos circundantes,
-        incluyendo vejiga, útero e intestino.
+        Trabajamos para{" "}
+        <strong>
+          reducir dolor y adherencias, mejorar la movilidad de los tejidos
+        </strong>{" "}
+        y favorecer una recuperación progresiva, ayudándote a volver poco a poco
+        a tu rutina y a sentirte cómoda de nuevo en tu cuerpo.
+      </>,
+    ],
+  },
+  {
+    image: "/hero-roser-3.jpg",
+    alt: "Dolor en las relaciones sexuales",
+    title: "Dolor en las relaciones sexuales",
+    heading: "Recupera el placer y la confianza en tu intimidad.",
+    paragraphs: [
+      <>
+        El dolor durante las relaciones sexuales{" "}
+        <strong>no debería normalizarse</strong>. Mediante un abordaje
+        individualizado y respetuoso, trabajamos para aliviar el dolor, mejorar
+        la funcionalidad del suelo pélvico y ayudarte a vivir tu intimidad con
+        mayor comodidad y seguridad.
+      </>,
+    ],
+  },
+  {
+    image: "/about-bg.jpg",
+    alt: "Entrenamiento terapéutico personalizado",
+    title: "Entrenamiento terapéutico personalizado",
+    heading: "Recupera fuerza, estabilidad y confianza en tu cuerpo.",
+    paragraphs: [
+      <>
+        El movimiento forma parte de la recuperación. A través de un{" "}
+        <strong>entrenamiento terapéutico adaptado a ti</strong>, trabajamos
+        fuerza, postura, movilidad y funcionalidad para ayudarte a volver de
+        forma segura a tu día a día y a la práctica deportiva.
       </>,
       <>
-        Muchas mujeres llegan sintiéndose desconectadas de esa parte de su
-        cuerpo. El tratamiento también trabaja{" "}
-        <strong>la reconexión y la aceptación</strong>, para que esa cicatriz
-        deje de ser una fuente de malestar y se integre como parte de tu
-        historia.
+        Cada sesión se adapta según{" "}
+        <strong>tu momento vital, tus necesidades y tus objetivos</strong>,
+        acompañándote de forma progresiva y respetuosa para que vuelvas a
+        sentirte fuerte, conectada y segura en tu cuerpo.
       </>,
     ],
   },
@@ -116,31 +141,52 @@ export default function ServiciosPage() {
       <section className="w-full py-16 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 items-start">
           {/* Col izq — label */}
-          <p className="text-[9px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
+          <p className="text-[9px] md:text-[13px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
             Servicios
           </p>
 
-          {/* Col der — intro + accordion + CTA */}
+          {/* Col der — intro + CTAs + accordion */}
           <div className="flex flex-col gap-10">
-            <p className="text-xl font-light text-stone-700 leading-relaxed max-w-2xl">
-              El suelo pélvico, el embarazo, el posparto, la sexualidad... son
-              aspectos esenciales en la vida de una mujer, pero sobre los que
-              todavía existen silencios y falta de información accesible.
-            </p>
+            <div className="flex flex-col gap-4 max-w-2xl">
+              <p className="text-xl font-light text-stone-700 leading-relaxed">
+                El suelo pélvico, el embarazo, el posparto o la sexualidad
+                forman parte de la vida de muchas mujeres, aunque todavía siguen
+                rodeados de silencios, desinformación y síntomas que se
+                normalizan demasiado.
+              </p>
+              <p className="text-base font-light text-stone-600 leading-relaxed">
+                Mi objetivo es acompañarte desde una mirada cercana, respetuosa
+                y especializada, ayudándote a comprender tu cuerpo, aliviar el
+                dolor y recuperar bienestar en cada etapa.
+              </p>
+            </div>
 
-            <Accordion items={SERVICES} />
+            {/* <Accordion items={SERVICES} /> */}
+            <ServicesGrid items={SERVICES} />
 
-            <div>
-              <Link
-                href="/sobre-mi"
-                className="inline-block bg-stone-900 text-white text-[9px] tracking-widest uppercase px-6 py-3 rounded-full"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/34650942560?text=Hola%20Roser%2C%20me%20gustar%C3%ADa%20recibir%20más%20información%20sobre%20tus%20servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-[10px] tracking-widest uppercase px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity"
               >
-                Conoce más sobre mí
-              </Link>
+                <MessageCircle size={16} />
+                Contactar por WhatsApp
+              </a>
+              <a
+                href="#contacto"
+                className="inline-flex items-center justify-center gap-2 border border-stone-900 text-stone-900 text-[10px] tracking-widest uppercase px-7 py-3.5 rounded-full hover:bg-stone-900 hover:text-white transition-colors"
+              >
+                Más información
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <SessionsSection />
+      <FaqSection />
       <ContactSection />
     </main>
   );
