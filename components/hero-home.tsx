@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HeroHome() {
   return (
     <section
-      className="relative w-full h-screen min-h-210 overflow-hidden"
+      className="relative w-full h-screen overflow-hidden"
       style={{ backgroundColor: "var(--color-warm)" }}
     >
       {/* Background photo — fills the entire section, cropped in tight on the two women */}
@@ -19,21 +19,49 @@ export default function HeroHome() {
         sizes="100vw"
       />
 
-      {/* Subtle, uniform tint so the dark text keeps enough contrast everywhere on the photo */}
+      {/* Dark "wine" wash behind the headline fading to warm light on the right — one continuous
+          gradient (both meet at transparent in the middle) so there's no hard seam at center */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: "rgba(255,255,255,0.22)" }}
+        style={{
+          background:
+            "linear-gradient(to right, rgba(20,10,13,0) 0%, rgba(20,10,13,0.25) 40%, rgba(20,10,13,0) 50%, rgba(255,242,177,0.2) 60%, rgba(255,242,177,0) 100%)",
+        }}
+      />
+      {/* Top — darkens the nav area */}
+      <div
+        className="absolute inset-x-0 top-0 h-[26%] pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(20,10,13,0.6) 0%, rgba(20,10,13,0) 100%)",
+        }}
+      />
+      {/* Bottom — darkens behind the "Roser Sabater" wordmark */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-[55%] pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(20,10,13,0) 0%, rgba(20,10,13,0.75) 100%)",
+        }}
       />
 
       <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
         <div className="">
           {/* div-1 — centrado verticalmente */}
-          <div className="max-w-2xl flex flex-col gap-2 md:-translate-y-1/4">
-            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase font-semibold mb-2">
+          <div className="relative isolate max-w-2xl flex flex-col gap-2">
+            {/* Soft dark shadow behind the headline block for extra contrast */}
+            <div
+              className="absolute -inset-x-6 -inset-y-8 -z-10 blur-2xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(20,10,13,0.55) 0%, rgba(20,10,13,0) 70%)",
+              }}
+            />
+            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase font-semibold mb-2 text-white">
               Roser Sabater - Especialista en Suelo Pélvico
             </h1>
             <p
-              className="text-6xl sm:text-5xl 2xl:text-7xl leading-[1.1] mb-4 text-stone-900 font-light"
+              className="text-6xl sm:text-5xl 2xl:text-7xl leading-[1.1] mb-4 text-white font-light"
               style={{ fontFamily: "var(--font-open-sans)" }}
             >
               Recupera tu
@@ -47,39 +75,23 @@ export default function HeroHome() {
             >
               PIDE CITA <ArrowRight className="inline-block ml-2" size={20} />
             </Link>
+            <Link
+              href="#cita"
+              className="hidden md:inline-flex items-center justify-center w-fit border border-white text-white mt-8 text-sm text-center tracking-[0.2em] font-medium px-8 py-4 rounded-full hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
+            >
+              PIDE CITA
+            </Link>
           </div>
 
-          {/* div-2 — pegado al fondo */}
-          <div className="absolute bottom-0 left-0 px-4 leading-none">
-            <p
-              className="text-[4.2rem] sm:text-[12rem] leading-[0.88] font-light tracking-[-0.01em] text-stone-900 whitespace-nowrap"
-              style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
-            >
-              R
-              {/* Logo replaces the "o" — inlined SVG for proper em-based sizing */}
-              <svg
-                viewBox="0 0 55 67"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                className="inline-block align-text-bottom"
-                style={{
-                  height: "0.65em",
-                  width: "auto",
-                  marginBottom: "0.10em",
-                }}
-              >
-                <path
-                  d="M24.964 27.5102C34.7634 26.4611 45.9286 30.3163 46.8536 41.3373C47.9923 54.9076 37.1685 60.3061 24.8422 59.1828C4.79818 57.3561 4.15892 29.7361 24.964 27.5102ZM21.0142 32.2112C19.3326 32.554 17.4178 34.3436 16.9816 35.967C15.2067 42.5927 22.9455 51.2409 28.7454 53.6151C37.0783 57.0266 42.1021 52.1446 38.6381 43.8569C36.1157 37.8249 28.0144 30.7882 21.0142 32.2127V32.2112Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M28.777 25.7221C21.7888 26.3587 15.6535 23.2974 16.2987 15.6048C16.8237 9.35605 23.1531 7.17174 28.7078 7.7653C40.5032 9.02811 40.1392 24.6863 28.777 25.7221ZM20.957 17.0323C18.9926 21.7319 21.8415 24.4993 26.5644 22.5643C29.8525 21.2184 34.24 16.3156 33.2337 12.5598C32.9871 11.6398 31.9011 10.6248 30.9475 10.4304C26.9796 9.62316 22.386 13.6119 20.957 17.0323Z"
-                  fill="currentColor"
-                />
-              </svg>
-              ser Sabater
-            </p>
+          {/* div-2 — pegado al fondo, centrado */}
+          <div className="absolute bottom-0 inset-x-0 flex justify-center px-4 pb-2 leading-none">
+            <Image
+              src="/logo-largo.svg"
+              alt="Roser Sabater"
+              width={1658}
+              height={218}
+              className="h-[2.4rem] sm:h-[6rem] brightness-0 invert"
+            />
           </div>
         </div>
       </div>

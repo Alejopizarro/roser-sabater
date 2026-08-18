@@ -1,9 +1,10 @@
-import { MessageCircle } from "lucide-react";
+import { Activity, GraduationCap, Medal, MessageCircle } from "lucide-react";
 // import Accordion from "@/components/ui/accordion";
 import ServicesGrid from "@/components/ui/services-grid";
 import SessionsSection from "@/components/sessions-section";
 import FaqSection from "@/components/faq-section";
 import ContactSection from "@/components/contact-section";
+import Image from "next/image";
 
 const SERVICES = [
   {
@@ -187,6 +188,74 @@ export default function ServiciosPage() {
 
       <SessionsSection />
       <FaqSection />
+      <section
+        className="w-full py-16 px-8"
+        style={{ backgroundColor: "var(--color-accent)" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] md:grid-rows-[auto_1fr] gap-12 items-start">
+            {/* Título — mobile: 1º, desktop: col 2 fila 1 */}
+            <h2 className="md:col-start-2 md:row-start-1 text-3xl xl:text-5xl font-light text-[var(--color-primary)] font-extralight">
+              Formación y Experiencia
+            </h2>
+            {/* Foto — mobile: 2º, desktop: col 1 filas 1-2 */}
+            <div className="md:col-start-1 md:row-start-1 md:row-span-2 relative w-full self-center aspect-square rounded-lg overflow-hidden">
+              <Image
+                src="/about-formacion.jpg"
+                alt="Roser Sabater"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            {/* Texto — mobile: 3º, desktop: col 2 fila 2 */}
+            <div className="md:col-start-2 md:row-start-2 flex flex-col gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8 text-lg font-light">
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <Medal
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Experiencia Cuantificable
+                  </h3>
+                  <p className="text-lg text-gray-700">
+                    Más de 800 mujeres tratadas con éxito en problemas de suelo
+                    pélvico (disfunción, embarazo, posparto y sexualidad).
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <GraduationCap
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Especialización Principal
+                  </h3>
+                  <p className="text-lg text-gray-700">
+                    Fisioterapeuta experta en Reeducación Abdominopélvica (Suelo
+                    pélvico, Obstetricia y Sexualidad Femenina).
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 md:max-w-[210px]">
+                  <h3 className="text-2xl font-semibold">
+                    <Activity
+                      size={20}
+                      className="text-[var(--color-primary)] inline-flex mr-2"
+                    />
+                    Métodos Diferenciales
+                  </h3>
+                  <p className="text-lg text-gray-700">
+                    Dominio de metodologías clave como el Método Hipopresivo
+                    (Marcel Caufriez), la Fisiogenómica y la Terapia Visceral.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ContactSection />
     </main>
   );

@@ -52,7 +52,14 @@ export default function NavBar() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-[11px] tracking-[0.2em] font-medium text-stone-900 hover:opacity-60 transition-opacity"
+                  className={`text-[11px] tracking-[0.2em] font-medium hover:opacity-60 transition-colors ${
+                    scrolled ? "text-stone-900" : "text-white"
+                  }`}
+                  style={
+                    scrolled
+                      ? undefined
+                      : { textShadow: "0 1px 3px rgba(0,0,0,0.45)" }
+                  }
                 >
                   {label}
                 </Link>
