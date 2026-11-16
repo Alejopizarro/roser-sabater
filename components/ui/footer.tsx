@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BOOKING_URL } from "@/lib/links";
+import { BOOKING_URL, INSTAGRAM_URL } from "@/lib/links";
 
 export default function Footer() {
   return (
@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Col 3 — Redes */}
         <div className="flex flex-row md:flex-col items-center justify-center md:items-end gap-4 order-3">
           <a
-            href="https://instagram.com"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
