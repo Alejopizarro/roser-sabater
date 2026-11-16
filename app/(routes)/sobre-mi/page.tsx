@@ -14,10 +14,11 @@ export default function SobreMiPage() {
       <section className="relative w-full h-[80vh] min-h-[360px] overflow-hidden">
         <Image
           src="/hero-about.jpg"
+          sizes="100vw"
           alt="Roser Sabater fisioterapeuta"
           fill
           className="object-cover object-center"
-          priority
+          preload
         />
         {/* Overlay suave */}
         <div className="absolute inset-0 bg-white/20" />
@@ -194,6 +195,7 @@ export default function SobreMiPage() {
       <section className="relative w-full min-h-[680px] flex items-center overflow-hidden">
         <Image
           src="/about-bg.jpg"
+          sizes="100vw"
           alt="Roser Sabater fisioterapeuta"
           fill
           className="object-cover object-center"
@@ -260,6 +262,7 @@ export default function SobreMiPage() {
             <div className="md:col-start-1 md:row-start-1 md:row-span-2 relative w-full self-center aspect-square rounded-lg overflow-hidden">
               <Image
                 src="/about-formacion.jpg"
+                sizes="(min-width: 768px) 50vw, 100vw"
                 alt="Roser Sabater"
                 fill
                 className="object-cover object-top"

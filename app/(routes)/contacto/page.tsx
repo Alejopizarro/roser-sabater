@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/links";
 import ContactSection from "@/components/contact-section";
 
 export default function ContactoPage() {
@@ -28,7 +29,9 @@ export default function ContactoPage() {
             </p>
             <div className="pt-2">
               <Link
-                href="#contacto"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-stone-900 text-white text-[10px] tracking-widest uppercase px-7 py-3 rounded-full hover:bg-stone-700 transition-colors"
               >
                 Pide tu cita

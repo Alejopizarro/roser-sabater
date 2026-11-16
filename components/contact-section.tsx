@@ -10,6 +10,7 @@ export default function ContactSection() {
       {/* Background image */}
       <Image
         src="/contact-bg.png"
+        sizes="100vw"
         alt="Contacto Roser Sabater"
         fill
         className="object-cover object-center"

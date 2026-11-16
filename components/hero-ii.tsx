@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/links";
 import { useState, useEffect, useCallback } from "react";
 
 const slides = [
@@ -74,7 +75,7 @@ export default function Hero() {
               src={slide.src}
               alt={slide.alt}
               fill
-              priority={i === 0}
+              preload={i === 0}
               quality={85}
               sizes="100vw"
               className="object-cover object-center"
@@ -102,7 +103,9 @@ export default function Hero() {
           </p>
 
           <Link
-            href="https://www.doctoralia.es/roser-sabater-moll-2/fisioterapeuta/san-pedro-de-alcantara"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center w-3/4 md:hidden bg-[var(--color-foreground)] mt-8 text-[var(--color-accent)] text-sm text-center tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
           >
             PIDE CITA <ArrowRight className="inline-block ml-2" size={20} />

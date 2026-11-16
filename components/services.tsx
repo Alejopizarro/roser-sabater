@@ -91,7 +91,7 @@ export default function Services() {
             >
               {/* Image card with overlay */}
               <div className="relative h-[300px] rounded-[50px] overflow-hidden aspect-[3/4]">
-                <Image src={image} alt={alt} fill className="object-cover" />
+                <Image src={image} alt={alt} fill sizes="240px" className="object-cover" />
                 {/* Gradient for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                 {/* Plus icon */}

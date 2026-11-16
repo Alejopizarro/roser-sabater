@@ -202,6 +202,7 @@ export default function ServiciosPage() {
             <div className="md:col-start-1 md:row-start-1 md:row-span-2 relative w-full self-center aspect-square rounded-lg overflow-hidden">
               <Image
                 src="/about-formacion.jpg"
+                sizes="(min-width: 768px) 50vw, 100vw"
                 alt="Roser Sabater"
                 fill
                 className="object-cover object-top"

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/links";
 
 export default function Footer() {
   return (
@@ -22,7 +24,7 @@ export default function Footer() {
             <p>Málaga</p>
           </div>
           <a
-            href="https://wa.me/34650942560"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-stone-900 text-white text-xs tracking-widest uppercase px-5 py-3 w-fit"
@@ -33,13 +35,13 @@ export default function Footer() {
 
         {/* Col 2 — Logo + legal */}
         <div className="flex flex-col items-center gap-4 order-1 md:order-2">
-          <p
-            className="text-5xl leading-tight text-stone-900 text-center font-mono"
-          >
-            Roser
-            <br />
-            Sabater
-          </p>
+          <Image
+            src="/logo-apilado.svg"
+            alt="Roser Sabater"
+            width={924}
+            height={410}
+            className="w-56 md:w-72 h-auto"
+          />
           <Link
             href="/politica-privacidad"
             className="text-xs text-stone-700 underline"

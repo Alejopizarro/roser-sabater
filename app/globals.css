@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  /* Single light theme — ignore the visitor's OS/browser dark mode */
+  color-scheme: light;
   --background: #f2f0ed;
   --color-foreground: #36171f;
 
@@ -15,13 +17,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-open-sans);
   --font-mono: var(--font-bricolage-grotesque);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

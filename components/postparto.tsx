@@ -24,6 +24,7 @@ export default function Postparto() {
       <section className="relative w-full overflow-hidden">
         <Image
           src="/amarena.jpg"
+          sizes="100vw"
           alt="Sesión de pilates de suelo pélvico"
           width={1920}
           height={1080}

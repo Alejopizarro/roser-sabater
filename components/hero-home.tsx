@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/links";
+import HeroSlider from "./hero-slider";
 
 export default function HeroHome() {
   return (
@@ -8,16 +10,8 @@ export default function HeroHome() {
       className="relative w-full h-screen overflow-hidden"
       style={{ backgroundColor: "var(--color-warm)" }}
     >
-      {/* Background photo — fills the entire section, cropped in tight on the two women */}
-      <Image
-        src="/roser-hero-hor.jpeg"
-        alt="Roser Sabater fisioterapeuta especialista en suelo pélvico"
-        fill
-        className="object-cover object-[90%_38%]"
-        preload
-        quality={95}
-        sizes="100vw"
-      />
+      {/* Background slider — 3 photos crossfading every 3s */}
+      <HeroSlider />
 
       {/* Dark "wine" wash behind the headline fading to warm light on the right — one continuous
           gradient (both meet at transparent in the middle) so there's no hard seam at center */}
@@ -70,13 +64,17 @@ export default function HeroHome() {
               <br />y confianza.
             </p>
             <Link
-              href="#cita"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-3/4 md:hidden bg-[var(--color-foreground)] mt-8 text-[var(--color-accent)] text-sm text-center tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
             >
               PIDE CITA <ArrowRight className="inline-block ml-2" size={20} />
             </Link>
             <Link
-              href="#cita"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:inline-flex items-center justify-center w-fit border border-white text-white mt-8 text-sm text-center tracking-[0.2em] font-medium px-8 py-4 rounded-full hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
             >
               PIDE CITA
@@ -90,7 +88,7 @@ export default function HeroHome() {
               alt="Roser Sabater"
               width={1658}
               height={218}
-              className="h-[2.4rem] sm:h-[6rem] brightness-0 invert"
+              className="h-[2.4rem] sm:h-[6rem] w-auto brightness-0 invert"
             />
           </div>
         </div>

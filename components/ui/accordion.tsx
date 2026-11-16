@@ -34,6 +34,7 @@ export default function Accordion({ items }: AccordionProps) {
             <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0">
               <Image
                 src={item.image}
+                sizes="64px"
                 alt={item.alt}
                 fill
                 className="object-cover"

@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/links";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
@@ -43,7 +44,7 @@ export default function NavBar() {
               alt="Logo Roser Sabater"
               width={38}
               height={46}
-              priority
+              preload
             />
           </Link>
 
@@ -68,7 +69,9 @@ export default function NavBar() {
           </ul>
 
           <Link
-            href="#cita"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[var(--color-foreground)] text-[var(--color-accent)] text-[11px] tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
           >
             PIDE CITA
@@ -83,7 +86,7 @@ export default function NavBar() {
               alt="Logo Roser Sabater"
               width={32}
               height={39}
-              priority
+              preload
             />
           </Link>
 
@@ -165,7 +168,9 @@ export default function NavBar() {
         {/* Logo */}
         <div className="flex justify-center py-10 self-end px-8">
           <Link
-            href="#cita"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[var(--color-warm)] text-[11px] tracking-[0.2em] font-medium px-7 py-3 rounded-full hover:bg-[#2c1005] transition-colors"
           >
             PIDE CITA <ArrowRight className="inline-block ml-2" />

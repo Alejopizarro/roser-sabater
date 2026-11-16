@@ -9,6 +9,7 @@ export default function PostpartoMobile() {
       {/* Background image */}
       <Image
         src="/amarena-mobile.jpg"
+        sizes="100vw"
         alt="Sesión de pilates de suelo pélvico"
         fill
         className="object-cover object-center"

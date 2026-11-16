@@ -36,7 +36,7 @@ export function AnimatedCircle({
       viewport={{ once: true, margin: "0px" }}
       transition={{ duration: 1.8, delay, ease }}
     >
-      <Image src={src} alt={alt} fill className={imageClassName} />
+      <Image src={src} alt={alt} fill sizes="300px" className={imageClassName} />
     </motion.div>
   );
 }
@@ -201,6 +201,7 @@ export function AboutMeMobileImage() {
         src="/second-section-1.jpg"
         alt="Roser Sabater"
         fill
+        sizes="104px"
         className="object-cover"
       />
     </motion.div>
@@ -246,12 +247,14 @@ export function AboutMeImages() {
             src="/second-section-1.jpg"
             alt="Roser Sabater en la playa"
             fill
+            sizes="104px"
             className="object-cover"
           />
           <Image
             src="/second-section-3.jpg"
             alt="Roser Sabater en la playa"
             fill
+            sizes="104px"
             className="md:hidden object-cover"
           />
         </div>
@@ -444,6 +447,7 @@ export function TestimonialImage() {
     >
       <Image
         src="/dicen-de-mi.png"
+        sizes="(min-width: 768px) 208px, 100vw"
         alt="Tratamiento fisioterapia"
         fill
         className="object-cover"

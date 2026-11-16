@@ -30,6 +30,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
             >
               <Image
                 src={item.image}
+                sizes="(min-width: 640px) 50vw, 100vw"
                 alt={item.alt}
                 fill
                 className="object-cover"
