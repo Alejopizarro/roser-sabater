@@ -1,6 +1,6 @@
 import FaqAccordion, { FaqItem } from "@/components/ui/faq-accordion";
 
-const FAQS: FaqItem[] = [
+export const FAQS: FaqItem[] = [
   {
     question: "¿Cómo saber si necesito una valoración de suelo pélvico?",
     answer: [

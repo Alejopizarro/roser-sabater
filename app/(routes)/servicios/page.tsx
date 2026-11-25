@@ -2,14 +2,19 @@ import { Activity, GraduationCap, Medal, MessageCircle } from "lucide-react";
 // import Accordion from "@/components/ui/accordion";
 import ServicesGrid from "@/components/ui/services-grid";
 import SessionsSection from "@/components/sessions-section";
-import FaqSection from "@/components/faq-section";
+import FaqSection, { FAQS } from "@/components/faq-section";
+import JsonLd, { BUSINESS_ID, breadcrumb } from "@/components/seo/json-ld";
+import type { AccordionItem } from "@/components/ui/accordion";
+import { pageMetadata } from "@/lib/seo";
+import { BUSINESS, absoluteUrl } from "@/lib/site";
 import ContactSection from "@/components/contact-section";
 import Image from "next/image";
 
-const SERVICES = [
+const SERVICES: AccordionItem[] = [
   {
     image: "/suelo-pelvico.jpg",
-    alt: "Suelo pélvico",
+    alt: "Valoración y tratamiento de suelo pélvico en San Pedro Alcántara",
+    id: "suelo-pelvico",
     title: "Suelo pélvico",
     heading: "Vuelve a sentirte segura, fuerte y libre en tu cuerpo.",
     paragraphs: [
@@ -29,7 +34,8 @@ const SERVICES = [
   },
   {
     image: "/embarazo.jpg",
-    alt: "Embarazo",
+    alt: "Fisioterapia y pilates durante el embarazo",
+    id: "embarazo",
     title: "Embarazo",
     heading:
       "Preparar tu cuerpo también es cuidar cómo quieres vivir tu parto y tu posparto.",
@@ -54,7 +60,8 @@ const SERVICES = [
   },
   {
     image: "/amarena.jpg",
-    alt: "Posparto",
+    alt: "Recuperación posparto y diástasis abdominal",
+    id: "posparto",
     title: "Posparto",
     heading: "Recupera tu cuerpo desde el cuidado, no desde la exigencia.",
     paragraphs: [
@@ -78,7 +85,8 @@ const SERVICES = [
   },
   {
     image: "/tratamiento-cicatrices.png",
-    alt: "Recuperación abdominal y tratamiento de cicatrices",
+    alt: "Tratamiento de cicatrices de cesárea y recuperación abdominal",
+    id: "cicatrices",
     title: "Recuperación abdominal y tratamiento de cicatrices",
     heading: "Recuperar movilidad y bienestar también forma parte de sanar.",
     paragraphs: [
@@ -101,7 +109,8 @@ const SERVICES = [
   },
   {
     image: "/dolor-relaciones.webp",
-    alt: "Dolor en las relaciones sexuales",
+    alt: "Fisioterapia para el dolor en las relaciones sexuales",
+    id: "dolor-relaciones",
     title: "Dolor en las relaciones sexuales",
     heading: "Recupera el placer y la confianza en tu intimidad.",
     paragraphs: [
@@ -116,7 +125,8 @@ const SERVICES = [
   },
   {
     image: "/entrenamiento-personalizado.webp",
-    alt: "Entrenamiento terapéutico personalizado",
+    alt: "Roser Sabater guiando un entrenamiento terapéutico personalizado",
+    id: "entrenamiento-terapeutico",
     title: "Entrenamiento terapéutico personalizado",
     heading: "Recupera fuerza, estabilidad y confianza en tu cuerpo.",
     paragraphs: [
@@ -136,15 +146,51 @@ const SERVICES = [
   },
 ];
 
+export const metadata = pageMetadata({
+  title: "Suelo pélvico, embarazo y posparto en San Pedro Alcántara",
+  description:
+    "Suelo pélvico, embarazo, posparto, diástasis, cicatrices y pilates para embarazadas en San Pedro Alcántara, Marbella. Descubre cómo te ayudo y pide cita.",
+  path: "/servicios",
+});
+
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumb([{ name: "Servicios", path: "/servicios" }]),
+    ...SERVICES.map((service) => ({
+      "@type": "Service",
+      "@id": absoluteUrl(`/servicios#${service.id}`),
+      name: service.title,
+      serviceType: service.title,
+      description: service.heading,
+      url: absoluteUrl(`/servicios#${service.id}`),
+      provider: { "@id": BUSINESS_ID },
+      areaServed: BUSINESS.areaServed.map((name) => ({
+        "@type": "City",
+        name,
+      })),
+    })),
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer.join(" ") },
+      })),
+    },
+  ],
+};
+
 export default function ServiciosPage() {
   return (
     <main className="bg-[var(--background)] pt-20 min-h-screen">
+      <JsonLd data={servicesJsonLd} />
       <section className="w-full py-16 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 items-start">
-          {/* Col izq — label */}
-          <p className="text-[9px] md:text-[13px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
+          {/* Col izq — label (H1 de la página, mismo estilo visual) */}
+          <h1 className="text-[9px] md:text-[13px] tracking-[0.35em] uppercase text-stone-500 font-medium pt-2">
             Servicios
-          </p>
+          </h1>
 
           {/* Col der — intro + CTAs + accordion */}
           <div className="flex flex-col gap-10">
@@ -203,7 +249,7 @@ export default function ServiciosPage() {
               <Image
                 src="/about-formacion.jpg"
                 sizes="(min-width: 768px) 50vw, 100vw"
-                alt="Roser Sabater"
+                alt="Roser Sabater Moll, fisioterapeuta de suelo pélvico"
                 fill
                 className="object-cover object-top"
               />

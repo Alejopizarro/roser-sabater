@@ -18,13 +18,16 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
         return (
           <div
             key={item.title}
-            className={`flex flex-col bg-white rounded-[32px] overflow-hidden border transition-colors duration-300 ${
+            id={item.id}
+            className={`scroll-mt-28 flex flex-col bg-white rounded-[32px] overflow-hidden border transition-colors duration-300 ${
               isOpen ? "border-stone-900" : "border-stone-200"
             }`}
           >
+            <div className="relative w-full h-56 md:h-64 shrink-0">
             <button
               type="button"
-              className="relative w-full h-56 md:h-64 text-left shrink-0"
+              aria-label={item.title}
+              className="absolute inset-0 w-full h-full text-left"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
             >
@@ -47,24 +50,27 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 +
               </span>
 
-              {/* Title */}
-              <p
-                className="absolute bottom-5 left-5 right-16 text-white text-2xl font-light leading-snug"
-                style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
-              >
-                {item.title}
-              </p>
             </button>
 
-            {isOpen && (item.heading || item.paragraphs) && (
-              <div className="flex flex-col gap-4 p-6">
+            {/* Title — fuera del botón para poder ser un H2 válido */}
+            <h2
+              className="absolute bottom-5 left-5 right-16 text-white text-2xl font-light leading-snug pointer-events-none"
+              style={{ fontFamily: "var(--font-cormorant, Georgia, serif)" }}
+            >
+              {item.title}
+            </h2>
+            </div>
+
+            {/* El contenido siempre está en el HTML (rastreable); solo se oculta */}
+            {(item.heading || item.paragraphs) && (
+              <div className={`flex-col gap-4 p-6 ${isOpen ? "flex" : "hidden"}`}>
                 {item.heading && (
-                  <h4
+                  <h3
                     className="text-base font-normal leading-snug"
                     style={{ color: "var(--color-primary)" }}
                   >
                     {item.heading}
-                  </h4>
+                  </h3>
                 )}
                 {item.paragraphs?.map((p, j) => (
                   <p

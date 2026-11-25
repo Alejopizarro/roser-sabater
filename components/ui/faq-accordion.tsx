@@ -39,8 +39,8 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
             </span>
           </button>
 
-          {open === i && (
-            <div className="pb-6 pr-10 flex flex-col gap-3">
+          {/* Respuesta siempre en el HTML (necesario para FAQPage); solo se oculta */}
+          <div className={`pb-6 pr-10 flex-col gap-3 ${open === i ? "flex" : "hidden"}`}>
               {item.answer.map((line, j) => (
                 <p
                   key={j}
@@ -49,8 +49,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   {line}
                 </p>
               ))}
-            </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

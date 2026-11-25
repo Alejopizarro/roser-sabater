@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 export interface AccordionItem {
+  /** Ancla para enlazar directamente al servicio (p. ej. /servicios#embarazo) */
+  id?: string;
   image: string;
   /** CSS object-position para encuadrar la foto (p. ej. "top", "30% 10%") */
   imagePosition?: string;
