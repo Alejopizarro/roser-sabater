@@ -96,7 +96,7 @@ export default function HeroHome() {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/"
+        href="https://wa.me/34650942560"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"

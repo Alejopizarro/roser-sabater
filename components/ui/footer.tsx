@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BOOKING_URL, INSTAGRAM_URL } from "@/lib/links";
+import { BUSINESS, GOOGLE_REVIEW_URL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -14,15 +15,33 @@ export default function Footer() {
           <div>
             <p className="font-medium">Lunes a Viernes:</p>
             <p>9h — 17h</p>
-            <a href="tel:650942560" className="underline">
+            <a href={BUSINESS.telephoneHref} className="underline">
               650 94 25 60
             </a>
           </div>
-          <div>
-            <p>C. de San Javier, 16, 4B,</p>
-            <p>29670 San Pedro Alcántara,</p>
-            <p>Málaga</p>
-          </div>
+          <address className="not-italic">
+            <p className="font-medium">Roser Sabater Fisioterapia</p>
+            <a
+              href={BUSINESS.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <p>C. de San Javier, 16, 4B,</p>
+              <p>29670 San Pedro Alcántara,</p>
+              <p>Málaga</p>
+            </a>
+          </address>
+          {GOOGLE_REVIEW_URL && (
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Déjanos tu reseña en Google
+            </a>
+          )}
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -73,7 +92,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://wa.me/34650942560"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"

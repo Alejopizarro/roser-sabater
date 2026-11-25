@@ -1,6 +1,16 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/links";
 import ContactSection from "@/components/contact-section";
+import { pageMetadata } from "@/lib/seo";
+import { BUSINESS } from "@/lib/site";
+import JsonLd, { breadcrumb } from "@/components/seo/json-ld";
+
+export const metadata = pageMetadata({
+  title: "Contacto y cita en San Pedro Alcántara | Roser Sabater",
+  description:
+    "Pide cita con Roser Sabater en C. de San Javier 16, San Pedro Alcántara. Lunes a viernes de 9:00 a 17:00. Llama o escribe por WhatsApp al 650 94 25 60.",
+  path: "/contacto",
+});
 
 export default function ContactoPage() {
   return (
@@ -8,6 +18,12 @@ export default function ContactoPage() {
       className="min-h-screen pt-20"
       style={{ backgroundColor: "var(--background)" }}
     >
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...breadcrumb([{ name: "Contacto", path: "/contacto" }]),
+        }}
+      />
       {/* ── Sección 1: Hero texto ── */}
       <section className="w-full py-16 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 items-start">
@@ -52,13 +68,21 @@ export default function ContactoPage() {
               <p className="text-[9px] tracking-[0.3em] uppercase text-stone-400 font-medium mb-1">
                 Dónde encontrarme
               </p>
-              <p className="text-sm font-light text-stone-800 leading-relaxed">
+              <address className="not-italic text-sm font-light text-stone-800 leading-relaxed">
                 C. de San Javier, 16, 4B
                 <br />
                 29670 San Pedro Alcántara
                 <br />
                 Málaga
-              </p>
+              </address>
+              <a
+                href={BUSINESS.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] tracking-widest uppercase text-stone-500 underline hover:opacity-60 transition-opacity mt-1"
+              >
+                Cómo llegar
+              </a>
             </div>
 
             {/* Horario */}
@@ -79,7 +103,7 @@ export default function ContactoPage() {
                 Teléfono y WhatsApp
               </p>
               <a
-                href="tel:650942560"
+                href={BUSINESS.telephoneHref}
                 className="text-sm font-light text-stone-800 hover:opacity-60 transition-opacity"
               >
                 650 94 25 60
@@ -94,6 +118,22 @@ export default function ContactoPage() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Mapa (carga diferida) ── */}
+      <section className="w-full pb-16 px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16">
+          <div />
+          <iframe
+            title="Mapa de Roser Sabater Fisioterapia en San Pedro Alcántara"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(
+              "Roser Sabater Fisioterapia, C. de San Javier 16, 29670 San Pedro Alcántara",
+            )}&z=16&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-80 rounded-3xl border-0"
+          />
         </div>
       </section>
 

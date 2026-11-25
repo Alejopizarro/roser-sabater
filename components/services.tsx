@@ -7,8 +7,9 @@ import { motion } from "motion/react";
 const SERVICES = [
   {
     image: "/suelo-pelvico.jpg",
-    alt: "Suelo pélvico",
+    alt: "Fisioterapia de suelo pélvico en San Pedro Alcántara",
     title: "Suelo pélvico",
+    anchor: "suelo-pelvico",
     paragraphs: [
       "Recupera el control urinario, elimina el dolor durante las relaciones y di adiós a la sensación de peso en la pelvis.",
       "Vuelve a sentirte segura, fuerte y libre en tu cuerpo.",
@@ -18,8 +19,9 @@ const SERVICES = [
   },
   {
     image: "/embarazo.jpg",
-    alt: "Embarazo",
+    alt: "Fisioterapia durante el embarazo",
     title: "Embarazo",
+    anchor: "embarazo",
     paragraphs: [
       "Prepara tu cuerpo para el parto, alivia el dolor lumbar y pélvico, y prevén diástasis y desgarros.",
       "Vive tu embarazo con confianza, movilidad y sin limitaciones.",
@@ -29,8 +31,9 @@ const SERVICES = [
   },
   {
     image: "/postparto.jpg",
-    alt: "Postparto",
+    alt: "Recuperación posparto con fisioterapia",
     title: "Postparto",
+    anchor: "posparto",
     paragraphs: [
       "Recupera tu fuerza abdominal, cuida tu suelo pélvico y vuelve a sentirte tú misma sin prisas.",
       "Acompaño tu recuperación a tu ritmo, para que recuperes tu bienestar físico y emocional.",
@@ -40,8 +43,9 @@ const SERVICES = [
   },
   {
     image: "/tratamiento-cicatrices.png",
-    alt: "Tratamiento y dolor de cicatrices",
+    alt: "Tratamiento de cicatrices de cesárea y episiotomía",
     title: "Tratamiento y dolor de cicatrices",
+    anchor: "cicatrices",
     paragraphs: [
       "Alivia el dolor pélvico crónico, mejora la movilidad de cicatrices de cesárea o episiotomía, y recupera tu funcionalidad.",
       "Soluciones reales sin cirugía para que vuelvas a disfrutar de tu vida sin molestias.",
@@ -76,7 +80,7 @@ export default function Services() {
             visible: { transition: { staggerChildren: 0.25 } },
           }}
         >
-          {SERVICES.map(({ image, alt, title, paragraphs, cta, href }) => (
+          {SERVICES.map(({ image, alt, title, anchor, paragraphs, cta, href }) => (
             <motion.div
               key={title}
               className="flex flex-col gap-5"
@@ -95,12 +99,13 @@ export default function Services() {
                 {/* Gradient for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                 {/* Plus icon */}
-                <a
-                  href="/servicios"
+                <Link
+                  href={`/servicios#${anchor}`}
+                  aria-label={`Más información sobre ${title}`}
                   className="absolute top-6 right-6 text-white text-2xl font-extralight leading-none"
                 >
                   +
-                </a>
+                </Link>
                 {/* Service title */}
                 <p
                   className="absolute bottom-4 left-4 right-4 text-white text-xl font-normal leading-snug"

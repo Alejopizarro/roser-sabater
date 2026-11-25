@@ -7,9 +7,9 @@ import { BOOKING_URL } from "@/lib/links";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "SOBRE MÍ", href: "sobre-mi" },
-  { label: "SERVICIOS", href: "servicios" },
-  { label: "CONTACTO", href: "contacto" },
+  { label: "SOBRE MÍ", href: "/sobre-mi" },
+  { label: "SERVICIOS", href: "/servicios" },
+  { label: "CONTACTO", href: "/contacto" },
 ];
 
 export default function NavBar() {
