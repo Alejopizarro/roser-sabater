@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/links";
@@ -51,7 +50,7 @@ export default function HeroHome() {
                   "radial-gradient(ellipse at center, rgba(20,10,13,0.55) 0%, rgba(20,10,13,0) 70%)",
               }}
             />
-            <h1 className="text-md sm:text-[12px] lg:text-md tracking-[0.35em] uppercase font-semibold mb-2 text-white">
+            <h1 className="text-[13px] sm:text-[12px] lg:text-md tracking-[0.35em] uppercase font-semibold mb-2 text-white">
               Roser Sabater - Especialista en Suelo Pélvico
             </h1>
             <p
@@ -67,15 +66,7 @@ export default function HeroHome() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-3/4 md:hidden bg-[var(--color-foreground)] mt-8 text-[var(--color-accent)] text-sm text-center tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
-            >
-              PIDE CITA <ArrowRight className="inline-block ml-2" size={20} />
-            </Link>
-            <Link
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center justify-center w-fit border border-white text-white mt-8 text-sm text-center tracking-[0.2em] font-medium px-8 py-4 rounded-full hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
+              className="inline-flex items-center justify-center w-fit border border-white text-white mt-8 text-sm text-center tracking-[0.2em] font-medium px-8 py-4 rounded-full hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
             >
               PIDE CITA
             </Link>
@@ -88,7 +79,7 @@ export default function HeroHome() {
               alt="Roser Sabater"
               width={1658}
               height={218}
-              className="h-[2.4rem] sm:h-[6rem] w-auto brightness-0 invert"
+              className="w-full h-auto sm:w-auto sm:h-[6rem] brightness-0 invert"
             />
           </div>
         </div>

@@ -191,7 +191,7 @@ export function SilencioImages() {
 export function AboutMeMobileImage() {
   return (
     <motion.div
-      className="md:hidden relative w-26 h-26 rounded-full overflow-hidden mb-4"
+      className="md:hidden absolute right-0 -top-10 w-32 h-32 rounded-full overflow-hidden"
       initial={{ opacity: 0, y: 10, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "0px" }}
@@ -201,7 +201,7 @@ export function AboutMeMobileImage() {
         src="/second-section-1.jpg"
         alt="Roser Sabater"
         fill
-        sizes="104px"
+        sizes="128px"
         className="object-cover"
       />
     </motion.div>

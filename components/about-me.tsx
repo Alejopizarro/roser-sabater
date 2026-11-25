@@ -32,9 +32,9 @@ export default function AboutMe() {
           <div className="flex-1 max-w-4xl md:px-10 font-light min-w-0">
             <AnimatedQuote className="text-[2.4rem] font-mono z-10 relative xl:text-[3.0rem] leading-[1.15] text-[#872B64] font-light mb-4" />
 
-            <div>
+            <div className="relative">
               <AboutMeMobileImage />
-              <p className="text-xl text-[#7B2050] mb-5">Si has tenido</p>
+              <p className="text-xl text-[#7B2050] mb-20 md:mb-5">Si has tenido</p>
 
               <ul className="pr-10">
                 {SI_HAS_TENIDO.map((item) => (
