@@ -34,6 +34,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 alt={item.alt}
                 fill
                 className="object-cover"
+                style={{ objectPosition: item.imagePosition ?? "center" }}
               />
               {/* Gradient for text legibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />

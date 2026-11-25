@@ -13,23 +13,67 @@ export default function SobreMiPage() {
       {/* ── Sección 1: Hero ── */}
       <section className="relative w-full h-[80vh] min-h-[360px] overflow-hidden">
         <Image
-          src="/hero-about.jpg"
+          src="/hero-slider-3.png"
           sizes="100vw"
           alt="Roser Sabater fisioterapeuta"
           fill
           className="object-cover object-center"
           preload
         />
-        {/* Overlay suave */}
-        <div className="absolute inset-0 bg-white/20" />
 
-        {/* Nombre centrado */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-[5rem] md:text-[7rem] leading-tight font-mono text-stone-900 text-center">
-            Roser
-            <br />
-            Sabater
-          </p>
+        {/* Sombreado como en la home para resaltar el texto */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ backgroundColor: "rgba(20,10,13,0.15)" }}
+        />
+        {/* Top — oscurece la zona del menú */}
+        <div
+          className="absolute inset-x-0 top-0 h-[26%] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(20,10,13,0.6) 0%, rgba(20,10,13,0) 100%)",
+          }}
+        />
+        {/* Bottom */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-[55%] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(20,10,13,0) 0%, rgba(20,10,13,0.6) 100%)",
+          }}
+        />
+
+        {/* Nombre centrado — logo apilado del footer */}
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="relative isolate">
+            {/* Sombra suave detrás del logo */}
+            <div
+              className="absolute -inset-x-16 -inset-y-12 -z-10 blur-2xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(20,10,13,0.55) 0%, rgba(20,10,13,0) 70%)",
+              }}
+            />
+            <h1 className="flex justify-center">
+              <Image
+                src="/logo-apilado.svg"
+                alt="Roser Sabater"
+                width={924}
+                height={410}
+                className="w-56 md:w-[22rem] h-auto brightness-0 invert"
+              />
+            </h1>
+            <div className="mt-6 md:mt-8 flex flex-col items-center gap-1 text-center text-white text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-light">
+              <p>Fisioterapeuta especializada en suelo pélvico y salud de la mujer</p>
+              <p>
+                <strong className="font-semibold">Fundadora de</strong> Roser
+                Sabater
+              </p>
+              <p>
+                <strong className="font-semibold">Colegiada Nº</strong> 5620
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -62,7 +106,7 @@ export default function SobreMiPage() {
                 <strong className="font-semibold text-stone-900">
                   Colegiada Nº
                 </strong>{" "}
-                (su número)
+                5620
               </p>
             </div>
 
@@ -97,7 +141,7 @@ export default function SobreMiPage() {
                     <strong className="font-semibold text-gray-950">
                       Colegiada Nº
                     </strong>{" "}
-                    (su número)
+                    5620
                   </p>
                 </div>
                 <h3 className="md:text-lg text-3xl text-[var(--color-primary)] my-6 font-semibold mb-4">

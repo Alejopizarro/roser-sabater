@@ -37,8 +37,8 @@ export default function NavBar() {
         }`}
       >
         {/* Desktop */}
-        <div className="hidden md:flex max-w-7xl mx-auto px-8 items-center justify-between">
-          <Link href="/" aria-label="Inicio">
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] max-w-7xl mx-auto px-8 items-center">
+          <Link href="/" aria-label="Inicio" className="justify-self-start">
             <Image
               src="/logo-roser.svg"
               alt="Logo Roser Sabater"
@@ -72,7 +72,7 @@ export default function NavBar() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[var(--color-foreground)] text-[var(--color-accent)] text-[11px] tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
+            className="justify-self-end bg-[var(--color-foreground)] text-[var(--color-accent)] text-[11px] tracking-[0.2em] font-medium px-7 py-4 rounded-full hover:bg-[#2c1005] transition-colors"
           >
             PIDE CITA
           </Link>

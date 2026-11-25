@@ -5,6 +5,8 @@ import Image from "next/image";
 
 export interface AccordionItem {
   image: string;
+  /** CSS object-position para encuadrar la foto (p. ej. "top", "30% 10%") */
+  imagePosition?: string;
   alt: string;
   title: string;
   heading?: string;

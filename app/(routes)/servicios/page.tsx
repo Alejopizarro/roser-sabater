@@ -53,7 +53,7 @@ const SERVICES = [
     ],
   },
   {
-    image: "/postparto.jpg",
+    image: "/amarena.jpg",
     alt: "Posparto",
     title: "Posparto",
     heading: "Recupera tu cuerpo desde el cuidado, no desde la exigencia.",
@@ -100,7 +100,7 @@ const SERVICES = [
     ],
   },
   {
-    image: "/hero-roser-3.jpg",
+    image: "/dolor-relaciones.webp",
     alt: "Dolor en las relaciones sexuales",
     title: "Dolor en las relaciones sexuales",
     heading: "Recupera el placer y la confianza en tu intimidad.",
@@ -115,7 +115,7 @@ const SERVICES = [
     ],
   },
   {
-    image: "/about-bg.jpg",
+    image: "/entrenamiento-personalizado.webp",
     alt: "Entrenamiento terapéutico personalizado",
     title: "Entrenamiento terapéutico personalizado",
     heading: "Recupera fuerza, estabilidad y confianza en tu cuerpo.",
