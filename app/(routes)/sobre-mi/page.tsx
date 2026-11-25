@@ -6,10 +6,25 @@ import {
 import { Activity, GraduationCap, Medal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumb } from "@/components/seo/json-ld";
+
+export const metadata = pageMetadata({
+  title: "Roser Sabater, fisioterapeuta de suelo pélvico en Marbella",
+  description:
+    "Conoce a Roser Sabater Moll, fisioterapeuta especializada en suelo pélvico y salud de la mujer en San Pedro Alcántara. Formación, enfoque y consulta.",
+  path: "/sobre-mi",
+});
 
 export default function SobreMiPage() {
   return (
     <main className="overflow-hidden">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...breadcrumb([{ name: "Sobre mí", path: "/sobre-mi" }]),
+        }}
+      />
       {/* ── Sección 1: Hero ── */}
       <section className="relative w-full h-[80vh] min-h-[360px] overflow-hidden">
         <Image
